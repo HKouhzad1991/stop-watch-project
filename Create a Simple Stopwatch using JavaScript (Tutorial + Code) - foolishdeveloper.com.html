@@ -1,0 +1,2145 @@
+<!DOCTYPE html>
+<!-- saved from url=(0086)https://foolishdeveloper.com/create-a-simple-stopwatch-using-javascript-tutorial-code/ -->
+<html lang="en-US" prefix="og: https://ogp.me/ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/js"></script><script type="text/javascript" async="" src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/analytics.js.download"></script><script type="text/javascript" async="" src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/recaptcha__en.js.download" crossorigin="anonymous" integrity="sha384-z/b6fleGPgQ5vn6jEWL2AgppzIbd1EhPqd0wf0J9vy92dVYtOxZIOAordrUh+mBN"></script><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+	
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Search Engine Optimization by Rank Math - https://s.rankmath.com/home -->
+<title>Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com</title>
+<meta name="description" content="In this article, I am going to show you how to make a simple javascript stopwatch. Many times this type of design is needed in different types of">
+<meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+<link rel="canonical" href="https://foolishdeveloper.com/create-a-simple-stopwatch-using-javascript-tutorial-code/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com">
+<meta property="og:description" content="In this article, I am going to show you how to make a simple javascript stopwatch. Many times this type of design is needed in different types of">
+<meta property="og:url" content="https://foolishdeveloper.com/create-a-simple-stopwatch-using-javascript-tutorial-code/">
+<meta property="og:site_name" content="foolishdeveloper.com">
+<meta property="article:section" content="Best_JavaScript">
+<meta property="og:updated_time" content="2023-01-05T11:17:24+00:00">
+<meta property="og:image" content="https://foolishdeveloper.com/wp-content/uploads/2021/10/Simple-Stopwatch-using-JavaScript-and-css.jpg">
+<meta property="og:image:secure_url" content="https://foolishdeveloper.com/wp-content/uploads/2021/10/Simple-Stopwatch-using-JavaScript-and-css.jpg">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="496">
+<meta property="og:image:alt" content="Simple Stopwatch using JavaScript and css">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="article:published_time" content="2021-10-05T08:26:00+00:00">
+<meta property="article:modified_time" content="2023-01-05T11:17:24+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com">
+<meta name="twitter:description" content="In this article, I am going to show you how to make a simple javascript stopwatch. Many times this type of design is needed in different types of">
+<meta name="twitter:image" content="https://foolishdeveloper.com/wp-content/uploads/2021/10/Simple-Stopwatch-using-JavaScript-and-css.jpg">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Foolish Developer">
+<meta name="twitter:label2" content="Time to read">
+<meta name="twitter:data2" content="8 minutes">
+<script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":["Person","Organization"],"@id":"https://foolishdeveloper.com/#person","name":"foolishdeveloper.com","logo":{"@type":"ImageObject","@id":"https://foolishdeveloper.com/#logo","url":"https://foolishdeveloper.com/wp-content/uploads/2023/01/fd-1-150x48.png","contentUrl":"https://foolishdeveloper.com/wp-content/uploads/2023/01/fd-1-150x48.png","caption":"foolishdeveloper.com","inLanguage":"en-US"},"image":{"@type":"ImageObject","@id":"https://foolishdeveloper.com/#logo","url":"https://foolishdeveloper.com/wp-content/uploads/2023/01/fd-1-150x48.png","contentUrl":"https://foolishdeveloper.com/wp-content/uploads/2023/01/fd-1-150x48.png","caption":"foolishdeveloper.com","inLanguage":"en-US"}},{"@type":"WebSite","@id":"https://foolishdeveloper.com/#website","url":"https://foolishdeveloper.com","name":"foolishdeveloper.com","publisher":{"@id":"https://foolishdeveloper.com/#person"},"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://foolishdeveloper.com/wp-content/uploads/2021/10/Simple-Stopwatch-using-JavaScript-and-css.jpg","url":"https://foolishdeveloper.com/wp-content/uploads/2021/10/Simple-Stopwatch-using-JavaScript-and-css.jpg","width":"1000","height":"496","caption":"Simple Stopwatch using JavaScript and css","inLanguage":"en-US"},{"@type":"WebPage","@id":"https://foolishdeveloper.com/create-a-simple-stopwatch-using-javascript-tutorial-code/#webpage","url":"https://foolishdeveloper.com/create-a-simple-stopwatch-using-javascript-tutorial-code/","name":"Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com","datePublished":"2021-10-05T08:26:00+00:00","dateModified":"2023-01-05T11:17:24+00:00","isPartOf":{"@id":"https://foolishdeveloper.com/#website"},"primaryImageOfPage":{"@id":"https://foolishdeveloper.com/wp-content/uploads/2021/10/Simple-Stopwatch-using-JavaScript-and-css.jpg"},"inLanguage":"en-US"},{"@type":"Person","@id":"https://foolishdeveloper.com/author/foolish-developer/","name":"Foolish Developer","url":"https://foolishdeveloper.com/author/foolish-developer/","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/?s=96&amp;d=mm&amp;r=g","url":"https://secure.gravatar.com/avatar/?s=96&amp;d=mm&amp;r=g","caption":"Foolish Developer","inLanguage":"en-US"}},{"@type":"BlogPosting","headline":"Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com","datePublished":"2021-10-05T08:26:00+00:00","dateModified":"2023-01-05T11:17:24+00:00","articleSection":"Best_JavaScript, For_Experts, html, javascript, Javascript_App, rank, s11, Stopwatch","author":{"@id":"https://foolishdeveloper.com/author/foolish-developer/"},"publisher":{"@id":"https://foolishdeveloper.com/#person"},"description":"In this article, I am going to show you how to make a&nbsp;simple javascript stopwatch. Many times this type of design is needed in different types of","name":"Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com","@id":"https://foolishdeveloper.com/create-a-simple-stopwatch-using-javascript-tutorial-code/#richSnippet","isPartOf":{"@id":"https://foolishdeveloper.com/create-a-simple-stopwatch-using-javascript-tutorial-code/#webpage"},"image":{"@id":"https://foolishdeveloper.com/wp-content/uploads/2021/10/Simple-Stopwatch-using-JavaScript-and-css.jpg"},"inLanguage":"en-US","mainEntityOfPage":{"@id":"https://foolishdeveloper.com/create-a-simple-stopwatch-using-javascript-tutorial-code/#webpage"}}]}</script>
+<!-- /Rank Math WordPress SEO plugin -->
+
+<link rel="dns-prefetch" href="https://www.googletagmanager.com/">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com/">
+<link rel="alternate" type="application/rss+xml" title="foolishdeveloper.com » Feed" href="https://foolishdeveloper.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="foolishdeveloper.com » Comments Feed" href="https://foolishdeveloper.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="foolishdeveloper.com » Create a Simple Stopwatch using JavaScript (Tutorial + Code) Comments Feed" href="https://foolishdeveloper.com/create-a-simple-stopwatch-using-javascript-tutorial-code/feed/">
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/foolishdeveloper.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link data-minify="1" rel="stylesheet" id="sgr-css" href="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/sgr.css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/style.min.css" media="all">
+<link rel="stylesheet" id="classic-theme-styles-css" href="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/classic-themes.min.css" media="all">
+<style id="global-styles-inline-css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--contrast: var(--contrast);--wp--preset--color--contrast-2: var(--contrast-2);--wp--preset--color--contrast-3: var(--contrast-3);--wp--preset--color--base: var(--base);--wp--preset--color--base-2: var(--base-2);--wp--preset--color--base-3: var(--base-3);--wp--preset--color--accent: var(--accent);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="generate-comments-css" href="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/comments.min.css" media="all">
+<link rel="stylesheet" id="generate-widget-areas-css" href="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/widget-areas.min.css" media="all">
+<link rel="stylesheet" id="generate-style-css" href="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/main.min.css" media="all">
+<style id="generate-style-inline-css">
+body{background-color:#ffffff;color:var(--contrast);}a{color:var(--accent);}a{text-decoration:underline;}.entry-title a, .site-branding a, a.button, .wp-block-button__link, .main-navigation a{text-decoration:none;}a:hover, a:focus, a:active{color:var(--contrast);}.grid-container{max-width:1630px;}.wp-block-group__inner-container{max-width:1630px;margin-left:auto;margin-right:auto;}.site-header .header-image{width:260px;}:root{--contrast:#222222;--contrast-2:#575760;--contrast-3:#b2b2be;--base:#f0f0f0;--base-2:#f7f8f9;--base-3:#ffffff;--accent:#1e73be;}.has-contrast-color{color:#222222;}.has-contrast-background-color{background-color:#222222;}.has-contrast-2-color{color:#575760;}.has-contrast-2-background-color{background-color:#575760;}.has-contrast-3-color{color:#b2b2be;}.has-contrast-3-background-color{background-color:#b2b2be;}.has-base-color{color:#f0f0f0;}.has-base-background-color{background-color:#f0f0f0;}.has-base-2-color{color:#f7f8f9;}.has-base-2-background-color{background-color:#f7f8f9;}.has-base-3-color{color:#ffffff;}.has-base-3-background-color{background-color:#ffffff;}.has-accent-color{color:#1e73be;}.has-accent-background-color{background-color:#1e73be;}body, button, input, select, textarea{font-size:20px;}body{line-height:1.8;}p{margin-bottom:1.7em;}.main-navigation a, .main-navigation .menu-toggle, .main-navigation .menu-bar-items{font-weight:500;font-size:20px;}h1.entry-title{font-weight:500;font-size:36px;}.site-info{font-size:19px;}h2{font-weight:400;font-size:32px;line-height:0.9em;margin-bottom:14px;}.top-bar{background-color:#636363;color:#ffffff;}.top-bar a{color:#ffffff;}.top-bar a:hover{color:#303030;}.site-header{background-color:var(--base-3);}.main-title a,.main-title a:hover{color:var(--contrast);}.site-description{color:var(--contrast-2);}.mobile-menu-control-wrapper .menu-toggle,.mobile-menu-control-wrapper .menu-toggle:hover,.mobile-menu-control-wrapper .menu-toggle:focus,.has-inline-mobile-toggle #site-navigation.toggled{background-color:rgba(0, 0, 0, 0.02);}.main-navigation,.main-navigation ul ul{background-color:var(--base-3);}.main-navigation .main-nav ul li a, .main-navigation .menu-toggle, .main-navigation .menu-bar-items{color:var(--contrast);}.main-navigation .main-nav ul li:not([class*="current-menu-"]):hover > a, .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus > a, .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"]) > a, .main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{color:var(--accent);}button.menu-toggle:hover,button.menu-toggle:focus{color:var(--contrast);}.main-navigation .main-nav ul li[class*="current-menu-"] > a{color:var(--accent);}.navigation-search input[type="search"],.navigation-search input[type="search"]:active, .navigation-search input[type="search"]:focus, .main-navigation .main-nav ul li.search-item.active > a, .main-navigation .menu-bar-items .search-item.active > a{color:var(--accent);}.main-navigation ul ul{background-color:var(--base);}.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .one-container .container, .separate-containers .paging-navigation, .inside-page-header{background-color:var(--base-3);}.entry-title a{color:var(--contrast);}.entry-title a:hover{color:var(--contrast-2);}.entry-meta{color:var(--contrast-2);}.sidebar .widget{background-color:var(--base-3);}.footer-widgets{background-color:var(--base-3);}.site-info{color:#ffffff;background-color:#254257;}.site-info a{color:#ffe06c;}input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],input[type="number"],textarea,select{color:var(--contrast);background-color:var(--base-2);border-color:var(--base);}input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="number"]:focus,textarea:focus,select:focus{color:var(--contrast);background-color:var(--base-2);border-color:var(--contrast-3);}button,html input[type="button"],input[type="reset"],input[type="submit"],a.button,a.wp-block-button__link:not(.has-background){color:#ffffff;background-color:#55555e;}button:hover,html input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,a.button:hover,button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,a.button:focus,a.wp-block-button__link:not(.has-background):active,a.wp-block-button__link:not(.has-background):focus,a.wp-block-button__link:not(.has-background):hover{color:#ffffff;background-color:#3f4047;}a.generate-back-to-top{background-color:rgba( 0,0,0,0.4 );color:#ffffff;}a.generate-back-to-top:hover,a.generate-back-to-top:focus{background-color:rgba( 0,0,0,0.6 );color:#ffffff;}@media (max-width: 768px){.main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{background:none;color:var(--contrast);}}.inside-header{padding:11px 51px 0px 27px;}.nav-below-header .main-navigation .inside-navigation.grid-container, .nav-above-header .main-navigation .inside-navigation.grid-container{padding:0px 36px 0px 12px;}.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header{padding:40px 0px 11px 0px;}.site-main .wp-block-group__inner-container{padding:40px 0px 11px 0px;}.separate-containers .paging-navigation{padding-top:20px;padding-bottom:20px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-0px;width:calc(100% + 0px);max-width:calc(100% + 0px);}.one-container.right-sidebar .site-main,.one-container.both-right .site-main{margin-right:0px;}.one-container.left-sidebar .site-main,.one-container.both-left .site-main{margin-left:0px;}.one-container.both-sidebars .site-main{margin:0px;}.sidebar .widget, .page-header, .widget-area .main-navigation, .site-main > *{margin-bottom:0px;}.separate-containers .site-main{margin:0px;}.both-right .inside-left-sidebar,.both-left .inside-left-sidebar{margin-right:0px;}.both-right .inside-right-sidebar,.both-left .inside-right-sidebar{margin-left:0px;}.one-container.archive .post:not(:last-child), .one-container.blog .post:not(:last-child){padding-bottom:11px;}.separate-containers .featured-image{margin-top:0px;}.separate-containers .inside-right-sidebar, .separate-containers .inside-left-sidebar{margin-top:0px;margin-bottom:0px;}.main-navigation .main-nav ul li a,.menu-toggle,.main-navigation .menu-bar-item > a{padding-left:15px;padding-right:15px;}.main-navigation .main-nav ul ul li a{padding:10px 15px 10px 15px;}.rtl .menu-item-has-children .dropdown-menu-toggle{padding-left:15px;}.menu-item-has-children .dropdown-menu-toggle{padding-right:15px;}.rtl .main-navigation .main-nav ul li.menu-item-has-children > a{padding-right:15px;}.widget-area .widget{padding:20px;}@media (max-width:768px){.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header{padding:27px 10px 30px 10px;}.site-main .wp-block-group__inner-container{padding:27px 10px 30px 10px;}.inside-top-bar{padding-right:30px;padding-left:30px;}.inside-header{padding-right:12px;padding-left:6px;}.widget-area .widget{padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px;}.footer-widgets-container{padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px;}.inside-site-info{padding-right:30px;padding-left:30px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-10px;width:calc(100% + 20px);max-width:calc(100% + 20px);}.one-container .site-main .paging-navigation{margin-bottom:0px;}}/* End cached CSS */.is-right-sidebar{width:15%;}.is-left-sidebar{width:20%;}.site-content .content-area{width:65%;}@media (max-width: 768px){.main-navigation .menu-toggle,.sidebar-nav-mobile:not(#sticky-placeholder){display:block;}.main-navigation ul,.gen-sidebar-nav,.main-navigation:not(.slideout-navigation):not(.toggled) .main-nav > ul,.has-inline-mobile-toggle #site-navigation .inside-navigation > *:not(.navigation-search):not(.main-nav){display:none;}.nav-align-right .inside-navigation,.nav-align-center .inside-navigation{justify-content:space-between;}.has-inline-mobile-toggle .mobile-menu-control-wrapper{display:flex;flex-wrap:wrap;}.has-inline-mobile-toggle .inside-header{flex-direction:row;text-align:left;flex-wrap:wrap;}.has-inline-mobile-toggle .header-widget,.has-inline-mobile-toggle #site-navigation{flex-basis:100%;}.nav-float-left .has-inline-mobile-toggle #site-navigation{order:10;}}
+.elementor-template-full-width .site-content{display:block;}
+.dynamic-author-image-rounded{border-radius:100%;}.dynamic-featured-image, .dynamic-author-image{vertical-align:middle;}.one-container.blog .dynamic-content-template:not(:last-child), .one-container.archive .dynamic-content-template:not(:last-child){padding-bottom:0px;}.dynamic-entry-excerpt > p:last-child{margin-bottom:0px;}
+.post-image:not(:first-child), .page-content:not(:first-child), .entry-content:not(:first-child), .entry-summary:not(:first-child), footer.entry-meta{margin-top:0em;}.post-image-above-header .inside-article div.featured-image, .post-image-above-header .inside-article div.post-image{margin-bottom:0em;}
+</style>
+<style id="rocket-lazyload-inline-css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://foolishdeveloper.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}.wp-embed-responsive .wp-has-aspect-ratio .rll-youtube-player{position:absolute;padding-bottom:0;width:100%;height:100%;top:0;bottom:0;left:0;right:0}
+</style>
+<script id="sgr-js-extra">
+var sgr = {"sgr_site_key":"6LfiBd0jAAAAANVAnlGZLGDUlYTiqbJLay79lDIK"};
+</script>
+<script src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/sgr.js.download" id="sgr-js" defer=""></script>
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/js(1)" id="google_gtagjs-js" async=""></script>
+<script id="google_gtagjs-js-after">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('set', 'linker', {"domains":["foolishdeveloper.com"]} );
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "UA-198106142-1", {"anonymize_ip":true});
+gtag("config", "G-XX6FLGRQNK");
+</script>
+
+<!-- End Google Analytics snippet added by Site Kit -->
+<link rel="https://api.w.org/" href="https://foolishdeveloper.com/wp-json/"><link rel="alternate" type="application/json" href="https://foolishdeveloper.com/wp-json/wp/v2/posts/208"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://foolishdeveloper.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://foolishdeveloper.com/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 6.1.1">
+<link rel="shortlink" href="https://foolishdeveloper.com/?p=208">
+<link rel="alternate" type="application/json+oembed" href="https://foolishdeveloper.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffoolishdeveloper.com%2Fcreate-a-simple-stopwatch-using-javascript-tutorial-code%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://foolishdeveloper.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffoolishdeveloper.com%2Fcreate-a-simple-stopwatch-using-javascript-tutorial-code%2F&amp;format=xml">
+<meta name="generator" content="Site Kit by Google 1.90.1"><script>	Array.from(document.querySelectorAll('a[target="_blank"]'))
+  .forEach(link => link.removeAttribute('target'));
+</script> 
+<link rel="pingback" href="https://foolishdeveloper.com/xmlrpc.php">
+
+<!-- Google AdSense snippet added by Site Kit -->
+<meta name="google-adsense-platform-account" content="ca-host-pub-2644536267352236">
+<meta name="google-adsense-platform-domain" content="sitekit.withgoogle.com">
+<!-- End Google AdSense snippet added by Site Kit -->
+
+<!-- Google AdSense snippet added by Site Kit -->
+<script async="" src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/f.txt" crossorigin="anonymous"></script>
+
+<!-- End Google AdSense snippet added by Site Kit -->
+		<style id="wp-custom-css">
+			
+
+/** Start Block Kit CSS: 144-3-3a7d335f39a8579c20cdf02f8d462582 **/
+
+.envato-block__preview{overflow: visible;}
+
+/* Envato Kit 141 Custom Styles - Applied to the element under Advanced */
+
+.elementor-headline-animation-type-drop-in .elementor-headline-dynamic-wrapper{
+	text-align: center;
+}
+.envato-kit-141-top-0 h1,
+.envato-kit-141-top-0 h2,
+.envato-kit-141-top-0 h3,
+.envato-kit-141-top-0 h4,
+.envato-kit-141-top-0 h5,
+.envato-kit-141-top-0 h6,
+.envato-kit-141-top-0 p {
+	margin-top: 0;
+}
+body{
+font-family: sans-serif, arial;	
+}
+
+.envato-kit-141-newsletter-inline .elementor-field-textual.elementor-size-md {
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+.envato-kit-141-bottom-0 p {
+	margin-bottom: 0;
+}
+
+.envato-kit-141-bottom-8 .elementor-price-list .elementor-price-list-item .elementor-price-list-header {
+	margin-bottom: .5rem;
+}
+
+.envato-kit-141.elementor-widget-testimonial-carousel.elementor-pagination-type-bullets .swiper-container {
+	padding-bottom: 52px;
+}
+
+.envato-kit-141-display-inline {
+	display: inline-block;
+}
+
+.envato-kit-141 .elementor-slick-slider ul.slick-dots {
+	bottom: -40px;
+}
+
+/** End Block Kit CSS: 144-3-3a7d335f39a8579c20cdf02f8d462582 **/
+
+.footer-widgets-container{
+	padding: 0px;
+}
+.site-info a{
+	text-decoration: none;
+}
+ 
+body{
+	background-color: #ffffff;
+}
+body p{
+	font-size: 18.5px;
+    color: #000000;
+     
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    word-wrap: break-word;
+    line-height: 2em;
+}
+input[type="search"]{
+	border-color: #a39d9d99;
+}
+.wp-element-button{
+	background: #093e7e;
+}
+
+/** Start Block Kit CSS: 136-3-fc37602abad173a9d9d95d89bbe6bb80 **/
+
+.envato-block__preview{overflow: visible !important;}
+
+/** End Block Kit CSS: 136-3-fc37602abad173a9d9d95d89bbe6bb80 **/
+.elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: 1250px;
+}
+.inside-header{
+	box-shadow: 0px 0px 10px 0px rgb(122 122 122 / 41%);
+}
+#left-sidebar {
+    background: #d2d2d2c9;
+}
+.widget-area .widget{
+	background: transparent;
+}
+.is-left-sidebar{
+	margin-right: 10px;
+}
+li a{
+	text-decoration: none;
+}
+ .menu-left-sidebar-container  li{
+	padding-left: 6px;
+	border: 1px solid #c0bcbc;
+}
+@media (max-width: 768px){
+	#left-sidebar,#right-sidebar{
+		display: none;
+	}
+}
+
+p i{word-break: break-all!important;
+    padding: 0 .25rem!important;
+    border: 1px solid rgba(179,177,177,.5)!important;
+    border-radius: .35rem!important;
+    background: #f1f4f8!important;
+    color: var(--black-text)!important;
+    margin: .21rem;
+line-height: 25px;
+    display: inline-block;}
+    
+    
+    blockquote{position:relative;font-size:18.5px;background-color:rgba(155,170,175,0.12);line-height: 2;color:#000000;border: 2px solid #0956f6;font-family:Open Sans,Arial,sans-serif;padding:16px 20px;margin:0;border-radius:var(--radius)}
+blockquote:before{position:absolute;padding: 8px;left:10px;top:-31px;content:'Important Note';border-radius: 2px;background: #2f56e5;font-family:sans-serif;font-size:20px;font-style:normal;font-weight:600;color:white;line-height:1;opacity:1;margin:0}
+
+
+.elementor-toggle-title h3{
+	font-size: 24px;
+}
+ 
+
+.class {
+ background:#edf0f2;
+ font-family: Consolas,Monaco,Lucida Console,monospace;
+ line-height: 1.65;
+ word-wrap: break-word;
+ border-radius: 5px;
+ color:#001d8f;
+ font-size:17.1px;
+ padding-left:10px;
+ }
+
+
+.class p{
+	color:#001d8f;
+}
+.codearia{
+
+            padding: 15px;
+            margin-top: 5px;
+            margin-left: 5px;
+
+            border-left: 4px solid rgb(0, 104, 165);
+            background: white;
+
+
+          }
+          .codebox{
+            background: #f1f1f1;
+            border: 3px solid rgba(0, 0, 0, 0.123);;
+            overflow: scroll;
+                  border-radius: 4px;
+            width: 100%;
+            max-height:400px;
+          }
+
+          /* width */
+          .codebox::-webkit-scrollbar {
+            width: 20px;
+            display: none;
+          }
+
+         .codearia:hover ~ .codebox::-webkit-scrollbar{
+           display: block;
+         }
+
+   .button1{
+        float: right;
+        margin-top: 10px;
+        margin-right: 10px;
+        padding: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: 200;
+        font-size: 17px;
+        font-family: sans-serif;
+        background-color: rgb(238, 239, 240);
+
+        color: rgb(6, 49, 141);
+        border-radius: 3px;
+        border: 1px solid rgba(0, 0, 0, 0.144);
+      }
+         .button1:active{
+        background-color: rgb(5, 128, 22);
+        color: white;
+        border: none;
+      }
+
+    button.last-btn{
+padding:14px 29px;
+  font-size:16px;
+  background-color:#0252a8;
+  border-radius:6px;
+  color:white;
+      font-weight: 300;
+    font-family: Open Sans,Arial,sans-serif;
+    border:none;
+  margin-left:35%;
+
+}
+button.last-btn i{
+	display: none;
+}
+    .deb {
+ font-family: monospace;
+ font-size: 16.5px;
+ font-weight: 500;
+ border-radius: 3px;
+ height: 500px;
+ overflow: scroll;
+border: 1px solid #b2b5b5;
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.05) 50%, transparent 50%, transparent);
+    background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.05) 50%, transparent 50%, transparent);
+    background-image: -ms-linear-gradient(rgba(0, 0, 0, 0.05) 50%, transparent 50%, transparent);
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.05) 50%, transparent 50%, transparent);
+    background-image: linear-gradient(#eff8f9 50%, transparent 50%, transparent);
+    -webkit-background-size: 100% 50px;
+    -moz-background-size: 100% 50px;
+    background-size: 100% 50px;
+    line-height: 25px;
+    color: #044798;
+
+    position: relative;
+    padding: 0 7px;
+
+
+    word-wrap: normal;
+    white-space: pre;
+    position: relative;}
+.elementor-posts-container.elementor-has-item-ratio .elementor-post__thumbnail img{
+	width: auto;
+	max-width: 500px;
+}
+blockquote{
+	    margin-top: 50px;
+}
+.allbtn21{
+	display:flex;
+	font-family: 'Oswald', sans-serif;
+   text-align: center;
+}
+a.up, a.down {
+   font-size: 20px;
+   color: #fff;
+   position: relative;
+   display: inline-block;
+   width: 200px;
+   border-radius: 30px;
+	text-decoration: none;
+   padding: 3px 20px;
+   margin: 0 15px;
+   background: #107dd0;
+   cursor: pointer;
+   border: 4px solid #107dd0;
+ }
+
+ a.down{
+  border: 4px solid #107dd0;
+  background: white;
+  color: #107dd0;
+ }
+ a.down:hover{
+background: #107dd0;
+color: white;
+ }
+  a.up:hover{
+    border: 4px solid #107dd0;
+    background: white;
+    color: #107dd0;
+  }
+       @media (max-width: 600px) {
+a.down{
+ margin-top:10px;
+          }}
+.is-right-sidebar{
+	    background: #dcdcdc;
+}		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>	<script async="" src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/f(1).txt" crossorigin="anonymous"></script>
+	<meta name="google-site-verification" content="BM1F8Agt-kCKJkmvabo9PjUvfmb2h5qnSU_wNFtDwKs">
+<link href="https://www.googletagmanager.com/" rel="preconnect"><link href="https://pagead2.googlesyndication.com/" rel="preconnect" crossorigin="anonymous"><link href="https://cpwebassets.codepen.io/" rel="preconnect"><link href="https://www.recaptcha.net/" rel="preconnect"><link href="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/sgr.js.download" rel="preload" as="script"><link href="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/menu.min.js.download" rel="preload" as="script"><link href="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/comment-reply.min.js.download" rel="preload" as="script"><link href="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/api.js.download" rel="preload" as="script"><link href="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/js(1)" rel="preload" as="script"><link href="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/f.txt" rel="preload" as="script" crossorigin="anonymous"><link href="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/f(1).txt" rel="preload" as="script" crossorigin="anonymous"><link href="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/ei.js.download" rel="preload" as="script"><script src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script><style type="text/css">body.swal2-shown:not(.swal2-no-backdrop) {
+  overflow-y: hidden; }
+
+body.swal2-toast-shown {
+  overflow-y: auto; }
+  body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-icon {
+      margin: 0 0 15px; }
+    body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-buttonswrapper {
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      -ms-flex-item-align: stretch;
+          align-self: stretch;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end; }
+    body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-loading {
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+    body.swal2-toast-shown.swal2-has-input > .swal2-container > .swal2-toast .swal2-input {
+      height: 32px;
+      font-size: 14px;
+      margin: 5px auto; }
+  body.swal2-toast-shown > .swal2-container {
+    position: fixed;
+    background-color: transparent; }
+    body.swal2-toast-shown > .swal2-container.swal2-shown {
+      background-color: transparent; }
+    body.swal2-toast-shown > .swal2-container.swal2-top {
+      top: 0;
+      left: 50%;
+      bottom: auto;
+      right: auto;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%); }
+    body.swal2-toast-shown > .swal2-container.swal2-top-right {
+      top: 0;
+      left: auto;
+      bottom: auto;
+      right: 0; }
+    body.swal2-toast-shown > .swal2-container.swal2-top-left {
+      top: 0;
+      left: 0;
+      bottom: auto;
+      right: auto; }
+    body.swal2-toast-shown > .swal2-container.swal2-center-left {
+      top: 50%;
+      left: 0;
+      bottom: auto;
+      right: auto;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%); }
+    body.swal2-toast-shown > .swal2-container.swal2-center {
+      top: 50%;
+      left: 50%;
+      bottom: auto;
+      right: auto;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); }
+    body.swal2-toast-shown > .swal2-container.swal2-center-right {
+      top: 50%;
+      left: auto;
+      bottom: auto;
+      right: 0;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%); }
+    body.swal2-toast-shown > .swal2-container.swal2-bottom-left {
+      top: auto;
+      left: 0;
+      bottom: 0;
+      right: auto; }
+    body.swal2-toast-shown > .swal2-container.swal2-bottom {
+      top: auto;
+      left: 50%;
+      bottom: 0;
+      right: auto;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%); }
+    body.swal2-toast-shown > .swal2-container.swal2-bottom-right {
+      top: auto;
+      left: auto;
+      bottom: 0;
+      right: 0; }
+
+body.swal2-iosfix {
+  position: fixed;
+  left: 0;
+  right: 0; }
+
+body.swal2-no-backdrop > .swal2-shown {
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  background-color: transparent; }
+  body.swal2-no-backdrop > .swal2-shown > .swal2-modal {
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); }
+  body.swal2-no-backdrop > .swal2-shown.swal2-top {
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-no-backdrop > .swal2-shown.swal2-top-left {
+    top: 0;
+    left: 0; }
+  body.swal2-no-backdrop > .swal2-shown.swal2-top-right {
+    top: 0;
+    right: 0; }
+  body.swal2-no-backdrop > .swal2-shown.swal2-center {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+  body.swal2-no-backdrop > .swal2-shown.swal2-center-left {
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-no-backdrop > .swal2-shown.swal2-center-right {
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  body.swal2-no-backdrop > .swal2-shown.swal2-bottom {
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  body.swal2-no-backdrop > .swal2-shown.swal2-bottom-left {
+    bottom: 0;
+    left: 0; }
+  body.swal2-no-backdrop > .swal2-shown.swal2-bottom-right {
+    bottom: 0;
+    right: 0; }
+
+.swal2-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  z-index: 1060; }
+  .swal2-container.swal2-top {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+  .swal2-container.swal2-top-left {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
+  .swal2-container.swal2-top-right {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
+  .swal2-container.swal2-center {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .swal2-container.swal2-center-left {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
+  .swal2-container.swal2-center-right {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
+  .swal2-container.swal2-bottom {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end; }
+  .swal2-container.swal2-bottom-left {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
+  .swal2-container.swal2-bottom-right {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
+  .swal2-container.swal2-grow-fullscreen > .swal2-modal {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -ms-flex-item-align: stretch;
+        align-self: stretch;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .swal2-container.swal2-grow-row > .swal2-modal {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .swal2-container.swal2-grow-column {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .swal2-container.swal2-grow-column.swal2-top, .swal2-container.swal2-grow-column.swal2-center, .swal2-container.swal2-grow-column.swal2-bottom {
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    .swal2-container.swal2-grow-column.swal2-top-left, .swal2-container.swal2-grow-column.swal2-center-left, .swal2-container.swal2-grow-column.swal2-bottom-left {
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start; }
+    .swal2-container.swal2-grow-column.swal2-top-right, .swal2-container.swal2-grow-column.swal2-center-right, .swal2-container.swal2-grow-column.swal2-bottom-right {
+      -webkit-box-align: end;
+          -ms-flex-align: end;
+              align-items: flex-end; }
+    .swal2-container.swal2-grow-column > .swal2-modal {
+      display: -webkit-box !important;
+      display: -ms-flexbox !important;
+      display: flex !important;
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      -ms-flex-line-pack: center;
+          align-content: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+  .swal2-container:not(.swal2-top):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-left):not(.swal2-bottom-right) > .swal2-modal {
+    margin: auto; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .swal2-container .swal2-modal {
+      margin: 0 !important; } }
+  .swal2-container.swal2-fade {
+    -webkit-transition: background-color .1s;
+    transition: background-color .1s; }
+  .swal2-container.swal2-shown {
+    background-color: rgba(0, 0, 0, 0.4); }
+
+.swal2-popup {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: none;
+  position: relative;
+  max-width: 100%; }
+  .swal2-popup.swal2-toast {
+    width: 300px;
+    padding: 0 15px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    overflow-y: hidden;
+    -webkit-box-shadow: 0 0 10px #d9d9d9;
+            box-shadow: 0 0 10px #d9d9d9; }
+    .swal2-popup.swal2-toast .swal2-title {
+      max-width: 300px;
+      font-size: 16px;
+      text-align: left; }
+    .swal2-popup.swal2-toast .swal2-content {
+      font-size: 14px;
+      text-align: left; }
+    .swal2-popup.swal2-toast .swal2-icon {
+      width: 32px;
+      height: 32px;
+      margin: 0 15px 0 0; }
+      .swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring {
+        width: 32px;
+        height: 32px; }
+      .swal2-popup.swal2-toast .swal2-icon.swal2-info, .swal2-popup.swal2-toast .swal2-icon.swal2-warning, .swal2-popup.swal2-toast .swal2-icon.swal2-question {
+        font-size: 26px;
+        line-height: 32px; }
+      .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'] {
+        top: 14px;
+        width: 22px; }
+        .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='left'] {
+          left: 5px; }
+        .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='right'] {
+          right: 5px; }
+    .swal2-popup.swal2-toast .swal2-buttonswrapper {
+      margin: 0 0 0 5px; }
+    .swal2-popup.swal2-toast .swal2-styled {
+      margin: 0 0 0 5px;
+      padding: 5px 10px; }
+      .swal2-popup.swal2-toast .swal2-styled:focus {
+        -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 2px rgba(50, 100, 150, 0.4);
+                box-shadow: 0 0 0 1px #fff, 0 0 0 2px rgba(50, 100, 150, 0.4); }
+    .swal2-popup.swal2-toast .swal2-validationerror {
+      width: 100%;
+      margin: 5px -20px; }
+    .swal2-popup.swal2-toast .swal2-success {
+      border-color: #a5dc86; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'] {
+        border-radius: 50%;
+        position: absolute;
+        width: 32px;
+        height: 64px;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); }
+        .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'][class$='left'] {
+          border-radius: 64px 0 0 64px;
+          top: -4px;
+          left: -15px;
+          -webkit-transform: rotate(-45deg);
+                  transform: rotate(-45deg);
+          -webkit-transform-origin: 32px 32px;
+                  transform-origin: 32px 32px; }
+        .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'][class$='right'] {
+          border-radius: 0 64px 64px 0;
+          top: -5px;
+          left: 14px;
+          -webkit-transform-origin: 0 32px;
+                  transform-origin: 0 32px; }
+      .swal2-popup.swal2-toast .swal2-success .swal2-success-ring {
+        width: 32px;
+        height: 32px; }
+      .swal2-popup.swal2-toast .swal2-success .swal2-success-fix {
+        width: 7px;
+        height: 90px;
+        left: 28px;
+        top: 8px; }
+      .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'] {
+        height: 5px; }
+        .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'][class$='tip'] {
+          width: 12px;
+          left: 3px;
+          top: 18px; }
+        .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-line'][class$='long'] {
+          width: 22px;
+          right: 3px;
+          top: 15px; }
+    .swal2-popup.swal2-toast .swal2-animate-success-line-tip {
+      -webkit-animation: animate-toast-success-tip .75s;
+              animation: animate-toast-success-tip .75s; }
+    .swal2-popup.swal2-toast .swal2-animate-success-line-long {
+      -webkit-animation: animate-toast-success-long .75s;
+              animation: animate-toast-success-long .75s; }
+  .swal2-popup:focus {
+    outline: none; }
+  .swal2-popup.swal2-loading {
+    overflow-y: hidden; }
+  .swal2-popup .swal2-title {
+    color: #595959;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+    text-transform: none;
+    position: relative;
+    margin: 0 0 .4em;
+    padding: 0;
+    display: block;
+    word-wrap: break-word; }
+  .swal2-popup .swal2-buttonswrapper {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 15px; }
+    .swal2-popup .swal2-buttonswrapper:not(.swal2-loading) .swal2-styled[disabled] {
+      opacity: .4;
+      cursor: no-drop; }
+    .swal2-popup .swal2-buttonswrapper.swal2-loading .swal2-styled.swal2-confirm {
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      border: 4px solid transparent;
+      border-color: transparent;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      margin: 7.5px;
+      vertical-align: top;
+      background-color: transparent !important;
+      color: transparent;
+      cursor: default;
+      border-radius: 100%;
+      -webkit-animation: rotate-loading 1.5s linear 0s infinite normal;
+              animation: rotate-loading 1.5s linear 0s infinite normal;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none; }
+    .swal2-popup .swal2-buttonswrapper.swal2-loading .swal2-styled.swal2-cancel {
+      margin-left: 30px;
+      margin-right: 30px; }
+    .swal2-popup .swal2-buttonswrapper.swal2-loading :not(.swal2-styled).swal2-confirm::after {
+      display: inline-block;
+      content: '';
+      margin-left: 5px;
+      vertical-align: -1px;
+      height: 15px;
+      width: 15px;
+      border: 3px solid #999999;
+      -webkit-box-shadow: 1px 1px 1px #fff;
+              box-shadow: 1px 1px 1px #fff;
+      border-right-color: transparent;
+      border-radius: 50%;
+      -webkit-animation: rotate-loading 1.5s linear 0s infinite normal;
+              animation: rotate-loading 1.5s linear 0s infinite normal; }
+  .swal2-popup .swal2-styled {
+    border: 0;
+    border-radius: 3px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 15px 5px 0;
+    padding: 10px 32px; }
+    .swal2-popup .swal2-styled:focus {
+      outline: none;
+      -webkit-box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(50, 100, 150, 0.4);
+              box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(50, 100, 150, 0.4); }
+  .swal2-popup .swal2-image {
+    margin: 20px auto;
+    max-width: 100%; }
+  .swal2-popup .swal2-close {
+    background: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 38px;
+    height: 40px;
+    font-size: 36px;
+    line-height: 40px;
+    font-family: serif;
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    cursor: pointer;
+    color: #cccccc;
+    -webkit-transition: color .1s ease;
+    transition: color .1s ease; }
+    .swal2-popup .swal2-close:hover {
+      color: #d55; }
+  .swal2-popup > .swal2-input,
+  .swal2-popup > .swal2-file,
+  .swal2-popup > .swal2-textarea,
+  .swal2-popup > .swal2-select,
+  .swal2-popup > .swal2-radio,
+  .swal2-popup > .swal2-checkbox {
+    display: none; }
+  .swal2-popup .swal2-content {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 300;
+    position: relative;
+    float: none;
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    color: #545454;
+    word-wrap: break-word; }
+  .swal2-popup .swal2-input,
+  .swal2-popup .swal2-file,
+  .swal2-popup .swal2-textarea,
+  .swal2-popup .swal2-select,
+  .swal2-popup .swal2-radio,
+  .swal2-popup .swal2-checkbox {
+    margin: 20px auto; }
+  .swal2-popup .swal2-input,
+  .swal2-popup .swal2-file,
+  .swal2-popup .swal2-textarea {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-size: 18px;
+    border-radius: 3px;
+    border: 1px solid #d9d9d9;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06);
+    -webkit-transition: border-color .3s, -webkit-box-shadow .3s;
+    transition: border-color .3s, -webkit-box-shadow .3s;
+    transition: border-color .3s, box-shadow .3s;
+    transition: border-color .3s, box-shadow .3s, -webkit-box-shadow .3s; }
+    .swal2-popup .swal2-input.swal2-inputerror,
+    .swal2-popup .swal2-file.swal2-inputerror,
+    .swal2-popup .swal2-textarea.swal2-inputerror {
+      border-color: #f27474 !important;
+      -webkit-box-shadow: 0 0 2px #f27474 !important;
+              box-shadow: 0 0 2px #f27474 !important; }
+    .swal2-popup .swal2-input:focus,
+    .swal2-popup .swal2-file:focus,
+    .swal2-popup .swal2-textarea:focus {
+      outline: none;
+      border: 1px solid #b4dbed;
+      -webkit-box-shadow: 0 0 3px #c4e6f5;
+              box-shadow: 0 0 3px #c4e6f5; }
+    .swal2-popup .swal2-input::-webkit-input-placeholder,
+    .swal2-popup .swal2-file::-webkit-input-placeholder,
+    .swal2-popup .swal2-textarea::-webkit-input-placeholder {
+      color: #cccccc; }
+    .swal2-popup .swal2-input:-ms-input-placeholder,
+    .swal2-popup .swal2-file:-ms-input-placeholder,
+    .swal2-popup .swal2-textarea:-ms-input-placeholder {
+      color: #cccccc; }
+    .swal2-popup .swal2-input::-ms-input-placeholder,
+    .swal2-popup .swal2-file::-ms-input-placeholder,
+    .swal2-popup .swal2-textarea::-ms-input-placeholder {
+      color: #cccccc; }
+    .swal2-popup .swal2-input::placeholder,
+    .swal2-popup .swal2-file::placeholder,
+    .swal2-popup .swal2-textarea::placeholder {
+      color: #cccccc; }
+  .swal2-popup .swal2-range input {
+    float: left;
+    width: 80%; }
+  .swal2-popup .swal2-range output {
+    float: right;
+    width: 20%;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center; }
+  .swal2-popup .swal2-range input,
+  .swal2-popup .swal2-range output {
+    height: 43px;
+    line-height: 43px;
+    vertical-align: middle;
+    margin: 20px auto;
+    padding: 0; }
+  .swal2-popup .swal2-input {
+    height: 43px;
+    padding: 0 12px; }
+    .swal2-popup .swal2-input[type='number'] {
+      max-width: 150px; }
+  .swal2-popup .swal2-file {
+    font-size: 20px; }
+  .swal2-popup .swal2-textarea {
+    height: 108px;
+    padding: 12px; }
+  .swal2-popup .swal2-select {
+    color: #545454;
+    font-size: inherit;
+    padding: 5px 10px;
+    min-width: 40%;
+    max-width: 100%; }
+  .swal2-popup .swal2-radio {
+    border: 0; }
+    .swal2-popup .swal2-radio label:not(:first-child) {
+      margin-left: 20px; }
+    .swal2-popup .swal2-radio input,
+    .swal2-popup .swal2-radio span {
+      vertical-align: middle; }
+    .swal2-popup .swal2-radio input {
+      margin: 0 3px 0 0; }
+  .swal2-popup .swal2-checkbox {
+    color: #545454; }
+    .swal2-popup .swal2-checkbox input,
+    .swal2-popup .swal2-checkbox span {
+      vertical-align: middle; }
+  .swal2-popup .swal2-validationerror {
+    background-color: #f0f0f0;
+    margin: 0 -20px;
+    overflow: hidden;
+    padding: 10px;
+    color: gray;
+    font-size: 16px;
+    font-weight: 300;
+    display: none; }
+    .swal2-popup .swal2-validationerror::before {
+      content: '!';
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: #ea7d7d;
+      color: #fff;
+      line-height: 24px;
+      text-align: center;
+      margin-right: 10px; }
+
+@supports (-ms-accelerator: true) {
+  .swal2-range input {
+    width: 100% !important; }
+  .swal2-range output {
+    display: none; } }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .swal2-range input {
+    width: 100% !important; }
+  .swal2-range output {
+    display: none; } }
+
+.swal2-icon {
+  width: 80px;
+  height: 80px;
+  border: 4px solid transparent;
+  border-radius: 50%;
+  margin: 20px auto 30px;
+  padding: 0;
+  position: relative;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+  .swal2-icon.swal2-error {
+    border-color: #f27474; }
+    .swal2-icon.swal2-error .swal2-x-mark {
+      position: relative;
+      display: block; }
+    .swal2-icon.swal2-error [class^='swal2-x-mark-line'] {
+      position: absolute;
+      height: 5px;
+      width: 47px;
+      background-color: #f27474;
+      display: block;
+      top: 37px;
+      border-radius: 2px; }
+      .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='left'] {
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+        left: 17px; }
+      .swal2-icon.swal2-error [class^='swal2-x-mark-line'][class$='right'] {
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        right: 16px; }
+  .swal2-icon.swal2-warning {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #f8bb86;
+    border-color: #facea8;
+    font-size: 60px;
+    line-height: 80px;
+    text-align: center; }
+  .swal2-icon.swal2-info {
+    font-family: 'Open Sans', sans-serif;
+    color: #3fc3ee;
+    border-color: #9de0f6;
+    font-size: 60px;
+    line-height: 80px;
+    text-align: center; }
+  .swal2-icon.swal2-question {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #87adbd;
+    border-color: #c9dae1;
+    font-size: 60px;
+    line-height: 80px;
+    text-align: center; }
+  .swal2-icon.swal2-success {
+    border-color: #a5dc86; }
+    .swal2-icon.swal2-success [class^='swal2-success-circular-line'] {
+      border-radius: 50%;
+      position: absolute;
+      width: 60px;
+      height: 120px;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg); }
+      .swal2-icon.swal2-success [class^='swal2-success-circular-line'][class$='left'] {
+        border-radius: 120px 0 0 120px;
+        top: -7px;
+        left: -33px;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        -webkit-transform-origin: 60px 60px;
+                transform-origin: 60px 60px; }
+      .swal2-icon.swal2-success [class^='swal2-success-circular-line'][class$='right'] {
+        border-radius: 0 120px 120px 0;
+        top: -11px;
+        left: 30px;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        -webkit-transform-origin: 0 60px;
+                transform-origin: 0 60px; }
+    .swal2-icon.swal2-success .swal2-success-ring {
+      width: 80px;
+      height: 80px;
+      border: 4px solid rgba(165, 220, 134, 0.2);
+      border-radius: 50%;
+      -webkit-box-sizing: content-box;
+              box-sizing: content-box;
+      position: absolute;
+      left: -4px;
+      top: -4px;
+      z-index: 2; }
+    .swal2-icon.swal2-success .swal2-success-fix {
+      width: 7px;
+      height: 90px;
+      position: absolute;
+      left: 28px;
+      top: 8px;
+      z-index: 1;
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg); }
+    .swal2-icon.swal2-success [class^='swal2-success-line'] {
+      height: 5px;
+      background-color: #a5dc86;
+      display: block;
+      border-radius: 2px;
+      position: absolute;
+      z-index: 2; }
+      .swal2-icon.swal2-success [class^='swal2-success-line'][class$='tip'] {
+        width: 25px;
+        left: 14px;
+        top: 46px;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); }
+      .swal2-icon.swal2-success [class^='swal2-success-line'][class$='long'] {
+        width: 47px;
+        right: 8px;
+        top: 38px;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+
+.swal2-progresssteps {
+  font-weight: 600;
+  margin: 0 0 20px;
+  padding: 0; }
+  .swal2-progresssteps li {
+    display: inline-block;
+    position: relative; }
+  .swal2-progresssteps .swal2-progresscircle {
+    background: #3085d6;
+    border-radius: 2em;
+    color: #fff;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+    width: 2em;
+    z-index: 20; }
+    .swal2-progresssteps .swal2-progresscircle:first-child {
+      margin-left: 0; }
+    .swal2-progresssteps .swal2-progresscircle:last-child {
+      margin-right: 0; }
+    .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep {
+      background: #3085d6; }
+      .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep ~ .swal2-progresscircle {
+        background: #add8e6; }
+      .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep ~ .swal2-progressline {
+        background: #add8e6; }
+  .swal2-progresssteps .swal2-progressline {
+    background: #3085d6;
+    height: .4em;
+    margin: 0 -1px;
+    z-index: 10; }
+
+[class^='swal2'] {
+  -webkit-tap-highlight-color: transparent; }
+
+@-webkit-keyframes showSweetToast {
+  0% {
+    -webkit-transform: translateY(-10px) rotateZ(2deg);
+            transform: translateY(-10px) rotateZ(2deg);
+    opacity: 0; }
+  33% {
+    -webkit-transform: translateY(0) rotateZ(-2deg);
+            transform: translateY(0) rotateZ(-2deg);
+    opacity: .5; }
+  66% {
+    -webkit-transform: translateY(5px) rotateZ(2deg);
+            transform: translateY(5px) rotateZ(2deg);
+    opacity: .7; }
+  100% {
+    -webkit-transform: translateY(0) rotateZ(0);
+            transform: translateY(0) rotateZ(0);
+    opacity: 1; } }
+
+@keyframes showSweetToast {
+  0% {
+    -webkit-transform: translateY(-10px) rotateZ(2deg);
+            transform: translateY(-10px) rotateZ(2deg);
+    opacity: 0; }
+  33% {
+    -webkit-transform: translateY(0) rotateZ(-2deg);
+            transform: translateY(0) rotateZ(-2deg);
+    opacity: .5; }
+  66% {
+    -webkit-transform: translateY(5px) rotateZ(2deg);
+            transform: translateY(5px) rotateZ(2deg);
+    opacity: .7; }
+  100% {
+    -webkit-transform: translateY(0) rotateZ(0);
+            transform: translateY(0) rotateZ(0);
+    opacity: 1; } }
+
+@-webkit-keyframes hideSweetToast {
+  0% {
+    opacity: 1; }
+  33% {
+    opacity: .5; }
+  100% {
+    -webkit-transform: rotateZ(1deg);
+            transform: rotateZ(1deg);
+    opacity: 0; } }
+
+@keyframes hideSweetToast {
+  0% {
+    opacity: 1; }
+  33% {
+    opacity: .5; }
+  100% {
+    -webkit-transform: rotateZ(1deg);
+            transform: rotateZ(1deg);
+    opacity: 0; } }
+
+@-webkit-keyframes showSweetAlert {
+  0% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7); }
+  45% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
+  80% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes showSweetAlert {
+  0% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7); }
+  45% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
+  80% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@-webkit-keyframes hideSweetAlert {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0; } }
+
+@keyframes hideSweetAlert {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0; } }
+
+.swal2-show {
+  -webkit-animation: showSweetAlert .3s;
+          animation: showSweetAlert .3s; }
+  .swal2-show.swal2-toast {
+    -webkit-animation: showSweetToast .5s;
+            animation: showSweetToast .5s; }
+  .swal2-show.swal2-noanimation {
+    -webkit-animation: none;
+            animation: none; }
+
+.swal2-hide {
+  -webkit-animation: hideSweetAlert .15s forwards;
+          animation: hideSweetAlert .15s forwards; }
+  .swal2-hide.swal2-toast {
+    -webkit-animation: hideSweetToast .2s forwards;
+            animation: hideSweetToast .2s forwards; }
+  .swal2-hide.swal2-noanimation {
+    -webkit-animation: none;
+            animation: none; }
+
+@-webkit-keyframes animate-success-tip {
+  0% {
+    width: 0;
+    left: 1px;
+    top: 19px; }
+  54% {
+    width: 0;
+    left: 1px;
+    top: 19px; }
+  70% {
+    width: 50px;
+    left: -8px;
+    top: 37px; }
+  84% {
+    width: 17px;
+    left: 21px;
+    top: 48px; }
+  100% {
+    width: 25px;
+    left: 14px;
+    top: 45px; } }
+
+@keyframes animate-success-tip {
+  0% {
+    width: 0;
+    left: 1px;
+    top: 19px; }
+  54% {
+    width: 0;
+    left: 1px;
+    top: 19px; }
+  70% {
+    width: 50px;
+    left: -8px;
+    top: 37px; }
+  84% {
+    width: 17px;
+    left: 21px;
+    top: 48px; }
+  100% {
+    width: 25px;
+    left: 14px;
+    top: 45px; } }
+
+@-webkit-keyframes animate-success-long {
+  0% {
+    width: 0;
+    right: 46px;
+    top: 54px; }
+  65% {
+    width: 0;
+    right: 46px;
+    top: 54px; }
+  84% {
+    width: 55px;
+    right: 0;
+    top: 35px; }
+  100% {
+    width: 47px;
+    right: 8px;
+    top: 38px; } }
+
+@keyframes animate-success-long {
+  0% {
+    width: 0;
+    right: 46px;
+    top: 54px; }
+  65% {
+    width: 0;
+    right: 46px;
+    top: 54px; }
+  84% {
+    width: 55px;
+    right: 0;
+    top: 35px; }
+  100% {
+    width: 47px;
+    right: 8px;
+    top: 38px; } }
+
+@-webkit-keyframes animate-toast-success-tip {
+  0% {
+    width: 0;
+    left: 1px;
+    top: 9px; }
+  54% {
+    width: 0;
+    left: 1px;
+    top: 9px; }
+  70% {
+    width: 24px;
+    left: -4px;
+    top: 17px; }
+  84% {
+    width: 8px;
+    left: 10px;
+    top: 20px; }
+  100% {
+    width: 12px;
+    left: 3px;
+    top: 18px; } }
+
+@keyframes animate-toast-success-tip {
+  0% {
+    width: 0;
+    left: 1px;
+    top: 9px; }
+  54% {
+    width: 0;
+    left: 1px;
+    top: 9px; }
+  70% {
+    width: 24px;
+    left: -4px;
+    top: 17px; }
+  84% {
+    width: 8px;
+    left: 10px;
+    top: 20px; }
+  100% {
+    width: 12px;
+    left: 3px;
+    top: 18px; } }
+
+@-webkit-keyframes animate-toast-success-long {
+  0% {
+    width: 0;
+    right: 22px;
+    top: 26px; }
+  65% {
+    width: 0;
+    right: 22px;
+    top: 26px; }
+  84% {
+    width: 26px;
+    right: 0;
+    top: 15px; }
+  100% {
+    width: 22px;
+    right: 3px;
+    top: 15px; } }
+
+@keyframes animate-toast-success-long {
+  0% {
+    width: 0;
+    right: 22px;
+    top: 26px; }
+  65% {
+    width: 0;
+    right: 22px;
+    top: 26px; }
+  84% {
+    width: 26px;
+    right: 0;
+    top: 15px; }
+  100% {
+    width: 22px;
+    right: 3px;
+    top: 15px; } }
+
+@-webkit-keyframes rotatePlaceholder {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  5% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  12% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); }
+  100% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); } }
+
+@keyframes rotatePlaceholder {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  5% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  12% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); }
+  100% {
+    -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg); } }
+
+.swal2-animate-success-line-tip {
+  -webkit-animation: animate-success-tip .75s;
+          animation: animate-success-tip .75s; }
+
+.swal2-animate-success-line-long {
+  -webkit-animation: animate-success-long .75s;
+          animation: animate-success-long .75s; }
+
+.swal2-success.swal2-animate-success-icon .swal2-success-circular-line-right {
+  -webkit-animation: rotatePlaceholder 4.25s ease-in;
+          animation: rotatePlaceholder 4.25s ease-in; }
+
+@-webkit-keyframes animate-error-icon {
+  0% {
+    -webkit-transform: rotateX(100deg);
+            transform: rotateX(100deg);
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    opacity: 1; } }
+
+@keyframes animate-error-icon {
+  0% {
+    -webkit-transform: rotateX(100deg);
+            transform: rotateX(100deg);
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    opacity: 1; } }
+
+.swal2-animate-error-icon {
+  -webkit-animation: animate-error-icon .5s;
+          animation: animate-error-icon .5s; }
+
+@-webkit-keyframes animate-x-mark {
+  0% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    margin-top: 26px;
+    opacity: 0; }
+  50% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    margin-top: 26px;
+    opacity: 0; }
+  80% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+    margin-top: -6px; }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    margin-top: 0;
+    opacity: 1; } }
+
+@keyframes animate-x-mark {
+  0% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    margin-top: 26px;
+    opacity: 0; }
+  50% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    margin-top: 26px;
+    opacity: 0; }
+  80% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+    margin-top: -6px; }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    margin-top: 0;
+    opacity: 1; } }
+
+.swal2-animate-x-mark {
+  -webkit-animation: animate-x-mark .5s;
+          animation: animate-x-mark .5s; }
+
+@-webkit-keyframes rotate-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes rotate-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+</style></head>
+
+<body class="post-template-default single single-post postid-208 single-format-standard wp-custom-logo wp-embed-responsive post-image-above-header post-image-aligned-center sticky-menu-fade both-sidebars nav-float-right separate-containers header-aligned-left dropdown-hover elementor-default elementor-kit-365 using-mouse" itemtype="https://schema.org/Blog" itemscope="" cz-shortcut-listen="true">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0 0.49803921568627"></fefuncr><fefuncg type="table" tableValues="0 0.49803921568627"></fefuncg><fefuncb type="table" tableValues="0 0.49803921568627"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0 1"></fefuncr><fefuncg type="table" tableValues="0 1"></fefuncg><fefuncb type="table" tableValues="0 1"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0.54901960784314 0.98823529411765"></fefuncr><fefuncg type="table" tableValues="0 1"></fefuncg><fefuncb type="table" tableValues="0.71764705882353 0.25490196078431"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0 1"></fefuncr><fefuncg type="table" tableValues="0 0.27843137254902"></fefuncg><fefuncb type="table" tableValues="0.5921568627451 0.27843137254902"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0 0"></fefuncr><fefuncg type="table" tableValues="0 0.64705882352941"></fefuncg><fefuncb type="table" tableValues="0 1"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0.78039215686275 1"></fefuncr><fefuncg type="table" tableValues="0 0.94901960784314"></fefuncg><fefuncb type="table" tableValues="0.35294117647059 0.47058823529412"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0.65098039215686 0.40392156862745"></fefuncr><fefuncg type="table" tableValues="0 1"></fefuncg><fefuncb type="table" tableValues="0.44705882352941 0.4"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0.098039215686275 1"></fefuncr><fefuncg type="table" tableValues="0 0.66274509803922"></fefuncg><fefuncb type="table" tableValues="0.84705882352941 0.41960784313725"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><a class="screen-reader-text skip-link" href="https://foolishdeveloper.com/create-a-simple-stopwatch-using-javascript-tutorial-code/#content" title="Skip to content">Skip to content</a>		<header class="site-header has-inline-mobile-toggle" id="masthead" aria-label="Site" itemtype="https://schema.org/WPHeader" itemscope="">
+			<div class="inside-header">
+				<div class="site-logo">
+					<a href="https://foolishdeveloper.com/" title="foolishdeveloper.com" rel="home">
+						<img class="header-image is-logo-image entered lazyloaded" alt="foolishdeveloper.com" src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/fd-1.png" title="foolishdeveloper.com" width="321" height="48" data-lazy-src="https://foolishdeveloper.com/wp-content/uploads/2023/01/fd-1.png" data-ll-status="loaded"><noscript><img  class="header-image is-logo-image" alt="foolishdeveloper.com" src="https://foolishdeveloper.com/wp-content/uploads/2023/01/fd-1.png" title="foolishdeveloper.com" width="321" height="48" /></noscript>
+					</a>
+				</div>	<nav class="main-navigation mobile-menu-control-wrapper" id="mobile-menu-control-wrapper" aria-label="Mobile Toggle">
+				<button data-nav="site-navigation" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+			<span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z"></path></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z"></path></svg></span><span class="screen-reader-text">Menu</span>		</button>
+	</nav>
+			<nav class="main-navigation sub-menu-right" id="site-navigation" aria-label="Primary" itemtype="https://schema.org/SiteNavigationElement" itemscope="">
+			<div class="inside-navigation grid-container">
+								<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z"></path></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z"></path></svg></span><span class="screen-reader-text">Menu</span>				</button>
+				<div id="primary-menu" class="main-nav"><ul id="menu-main-menu" class=" menu sf-menu"><li id="menu-item-392" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-392"><a href="https://foolishdeveloper.com/">Home</a></li>
+<li id="menu-item-395" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-395"><a href="https://foolishdeveloper.com/recent-post/">Recent Post</a></li>
+<li id="menu-item-393" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-393"><a href="https://foolishdeveloper.com/web-development/">Web Development</a></li>
+<li id="menu-item-394" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-394"><a href="https://foolishdeveloper.com/web-design/">Web Design</a></li>
+<li id="menu-item-396" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-396"><a href="https://foolishdeveloper.com/contact/">Contact Us</a></li>
+</ul></div>			</div>
+		</nav>
+					</div>
+		</header>
+		
+	<div class="site grid-container container hfeed" id="page">
+				<div class="site-content" id="content">
+			
+	<div class="content-area" id="primary">
+		<main class="site-main" id="main">
+			
+<article id="post-208" class="post-208 post type-post status-publish format-standard has-post-thumbnail hentry category-best_javascript category-for_experts category-html category-javascript category-javascript_app category-rank category-s11 category-stopwatch" itemtype="https://schema.org/CreativeWork" itemscope="">
+	<div class="inside-article">
+					<header class="entry-header" aria-label="Content">
+				<h1 class="entry-title" itemprop="headline">Create a Simple Stopwatch using JavaScript (Tutorial + Code)</h1>			</header>
+			
+		<div class="entry-content" itemprop="text">
+			<p style="text-align: left;">In this article, I am going to show you how to make a&nbsp;<strong>simple javascript stopwatch</strong>. Many times this type of design is needed in different types of projects or websites. If you want to make&nbsp;<a href="https://www.foolishdeveloper.com/2021/07/simple-countdown-timer-using-javascript.html" rel="noopener"><span style="color: #2b00fe;">Stopwatch using JavaScript</span></a>, then follow the tutorial below.</p>
+<div class="separator" style="clear: both;"><a href="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/Simple Stopwatch using JavaScript and css.jpg" style="display: block; padding: 1em 0; text-align: center; " rel="noopener"><img decoding="async" alt="" border="0" data-original-height="496" data-original-width="1000" src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/Simple Stopwatch using JavaScript and css.jpg" data-lazy-src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEij2f4ZMI4jTGp-Bmd5efTXlT-vExr-LKT3a5ZVihQDCloxG95v6pmN7XisWxUz3HpDvtk8H_M12YFJI010APnAhnsqOwx-6dNhPk5f_2VkC6ZFeO1LmC__VhG3IL5ZVVyY6dEfKVpKcWpJb9Xi6-r4VVtvXgtaEdXTAAapQuK8lpCk0UFQFNecwPgJoA/s1600/Simple%20Stopwatch%20using%20JavaScript%20and%20css.jpg" data-ll-status="error" class="entered error"><noscript><img decoding="async" alt="" border="0" data-original-height="496" data-original-width="1000" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEij2f4ZMI4jTGp-Bmd5efTXlT-vExr-LKT3a5ZVihQDCloxG95v6pmN7XisWxUz3HpDvtk8H_M12YFJI010APnAhnsqOwx-6dNhPk5f_2VkC6ZFeO1LmC__VhG3IL5ZVVyY6dEfKVpKcWpJb9Xi6-r4VVtvXgtaEdXTAAapQuK8lpCk0UFQFNecwPgJoA/s1600/Simple%20Stopwatch%20using%20JavaScript%20and%20css.jpg"></noscript></a></div>
+<p style="text-align: left;">Stopwatch is a type of JavaScript project that is used to count sometimes. You need to know the basics of JavaScript to create this project. In this tutorial, I will give you a complete explanation.</p>
+<h2 style="font-size: 28px;">JavaScript Stopwatch</h2>
+<p>Now is the time to create this&nbsp;<strong>simple countdown timer using JavaScript</strong>. All you need is an HTML CSS and JavaScript file.</p>
+<p style="text-align: left;">The notable point of this<a href="https://www.timeanddate.com/stopwatch/" rel="noopener"> <span style="color: #2b00fe;">stopwatch</span></a> is that here you can count the hours, minutes, seconds, and milliseconds.</p>
+<div class="cp_embed_wrapper"><iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="364" width="100%" name="cp_embed_1" scrolling="no" src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/XWgQwgv.html" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_XWgQwgv"></iframe></div>
+<p><script async="" src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/ei.js.download"></script></p>
+<p style="text-align: left;">I have completed this project (Simple Stopwatch using JavaScript) in three steps. First I made the display then I added the buttons and at the end of all, I made the stopwatch functional.</p>
+<h2 style="font-size: 28px;">How to create a simple stopwatch using JavaScript</h2>
+<p style="text-align: left;">Let me tell you something about this design before sharing this tutorial. First I designed the webpage and then made a small box. This box has a display to show the time. There are also three navigation buttons to control this time.</p>
+<h3 style="font-size: 25px; text-align: left;"><span style="color: #2b00fe;">Step 1:</span>&nbsp;Create the basic structure of the stopwatch</h3>
+<div>
+<p style="text-align: left;">We have created the basic structure of this <strong>stopwatch</strong> using the following <span style="color: #2b00fe;">HTML and CSS</span> code. Here I have given blue as the background color of the webpage and white as the background color of the design.&nbsp;</p>
+<p style="text-align: left;">This box uses 40% length and <u>min-width: 500px</u>. No specific height is given here, it will determine the height based on the amount of content.</p>
+</div>
+<div class="class">
+<div class="class">&lt;div class=”container”&gt;</div>
+<div class="class">&nbsp;</div>
+<div class="class">&lt;/div&gt;</div>
+</div>
+<div class="class">
+<div class="class">
+<div class="class">*,</div>
+<div class="class">*:before,</div>
+<div class="class">*:after{</div>
+<div class="class">&nbsp; &nbsp; padding: 0;</div>
+<div class="class">&nbsp; &nbsp; margin: 0;</div>
+<div class="class">&nbsp; &nbsp; box-sizing: border-box;</div>
+<div class="class">}</div>
+<div class="class"></div>
+<div class="class">body{</div>
+<div class="class">&nbsp; background: #448aff;</div>
+<div class="class">}</div>
+<div class="class"></div>
+</div>
+<div class="class">.container{</div>
+<div class="class">&nbsp; &nbsp; background-color: #ffffff;</div>
+<div class="class">&nbsp; &nbsp; width: 40%;</div>
+<div class="class">&nbsp; &nbsp; min-width: 500px;</div>
+<div class="class">&nbsp; &nbsp; position: absolute;</div>
+<div class="class">&nbsp; &nbsp; transform: translate(-50%,-50%);</div>
+<div class="class">&nbsp; &nbsp; top: 50%;</div>
+<div class="class">&nbsp; &nbsp; left: 50%;</div>
+<div class="class">&nbsp; &nbsp; padding: 20px 0;</div>
+<div class="class">&nbsp; &nbsp; padding-bottom: 50px;</div>
+<div class="class">&nbsp; &nbsp; border-radius: 10px;</div>
+<div class="class">}</div>
+</div>
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEjxv_y3HA82GZCK_a3bhJPdric-MQWBr9QZvzLKkU1ittL9huAzyPJeXu1LKII16f2nhtlIImQimrqXsajTQ-7YlgX-XagITdphDy8AeD7zVkhvusf7yRU-wgQ1yYr5YaIi1a4RKiiUyqbSVEzbNaIezKZEEWgPjptFCCdU3eMEVegjnD9hWWmti2NnDw" style="display: block; padding: 1em 0px; text-align: center;" rel="noopener"><img decoding="async" alt="Create the basic structure of the stopwatch" border="0" data-original-height="610" data-original-width="1280" src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/AVvXsEjxv_y3HA82GZCK_a3bhJPdric-MQWBr9QZvzLKkU1ittL9huAzyPJeXu1LKII16f2nhtlIImQimrqXsajTQ-7YlgX-XagITdphDy8AeD7zVkhvusf7yRU-wgQ1yYr5YaIi1a4RKii" title="Create the basic structure of the stopwatch" data-lazy-src="https://blogger.googleusercontent.com/img/a/AVvXsEjxv_y3HA82GZCK_a3bhJPdric-MQWBr9QZvzLKkU1ittL9huAzyPJeXu1LKII16f2nhtlIImQimrqXsajTQ-7YlgX-XagITdphDy8AeD7zVkhvusf7yRU-wgQ1yYr5YaIi1a4RKiiUyqbSVEzbNaIezKZEEWgPjptFCCdU3eMEVegjnD9hWWmti2NnDw=s16000" data-ll-status="error" class="entered error"><noscript><img decoding="async" alt="Create the basic structure of the stopwatch" border="0" data-original-height="610" data-original-width="1280" src="https://blogger.googleusercontent.com/img/a/AVvXsEjxv_y3HA82GZCK_a3bhJPdric-MQWBr9QZvzLKkU1ittL9huAzyPJeXu1LKII16f2nhtlIImQimrqXsajTQ-7YlgX-XagITdphDy8AeD7zVkhvusf7yRU-wgQ1yYr5YaIi1a4RKiiUyqbSVEzbNaIezKZEEWgPjptFCCdU3eMEVegjnD9hWWmti2NnDw=s16000" title="Create the basic structure of the stopwatch"></noscript></a></div>
+<h3 style="font-size: 25px; text-align: left;"><span style="color: #2b00fe;">Step 2:</span>&nbsp;Create a display to see the time</h3>
+<p style="text-align: left;">
+</p><p>Created a display using the following <a href="https://www.foolishdeveloper.com/search/label/html" rel="noopener"><span style="color: #2b00fe;">HTML and CSS code</span></a>. All the time can be seen in this display. Here you can count the hours, minutes, seconds, and milliseconds.&nbsp;</p>
+<p style="text-align: left;">Its width has been used 92% which means this box can be seen 92% mm. A shadow has been used around the display to make it brighter and more attractive.</p>
+<div class="class">
+<div class="class">&lt;div class=”timerDisplay”&gt;</div>
+<div class="class">&nbsp; &nbsp;00 : 00 : 00 : 000</div>
+<div class="class">&lt;/div&gt;</div>
+</div>
+<div class="class">
+<div class="class">.timerDisplay{</div>
+<div class="class">&nbsp; &nbsp; position: relative;</div>
+<div class="class">&nbsp; &nbsp; width: 92%;</div>
+<div class="class">&nbsp; &nbsp; background: #ffffff;</div>
+<div class="class">&nbsp; &nbsp; left: 4%;</div>
+<div class="class">&nbsp; &nbsp; padding: 40px 0;</div>
+<div class="class">&nbsp; &nbsp; font-family: ‘Roboto mono’,monospace;</div>
+<div class="class">&nbsp; &nbsp; color: #0381bb;</div>
+<div class="class">&nbsp; &nbsp; font-size: 40px;</div>
+<div class="class">&nbsp; &nbsp; display: flex;</div>
+<div class="class">&nbsp; &nbsp; align-items: center;</div>
+<div class="class">&nbsp; &nbsp; justify-content: space-around;</div>
+<div class="class">&nbsp; &nbsp; border-radius: 5px;</div>
+<div class="class">&nbsp; &nbsp; box-shadow: 0 0 20px rgba(0,139,253,0.25);</div>
+<div class="class">}</div>
+</div>
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEjK5U0LaCsPXQTqp-dBW4QM3unkqsKI5-3X4lm4dV_uEJYHG-BJhHq1mXLxCtD37rX-8Fj1OzUyKyNEXQoJJGRy4ygpu_diV1x9n23A7jrjax55X516J-RSrb_IGcPYgwzVUGdGmz_J-58xTNAmgVEkbWUHNN1kh7jP5ObCb08Q2gwARvS4hqR1McUBXw" style="display: block; padding: 1em 0px; text-align: center;" rel="noopener"><img decoding="async" alt="Create a display to see the time" border="0" data-original-height="610" data-original-width="1280" src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/AVvXsEjK5U0LaCsPXQTqp-dBW4QM3unkqsKI5-3X4lm4dV_uEJYHG-BJhHq1mXLxCtD37rX-8Fj1OzUyKyNEXQoJJGRy4ygpu_diV1x9n23A7jrjax55X516J-RSrb_IGcPYgwzVUGdGmz_" title="Create a display to see the time" data-lazy-src="https://blogger.googleusercontent.com/img/a/AVvXsEjK5U0LaCsPXQTqp-dBW4QM3unkqsKI5-3X4lm4dV_uEJYHG-BJhHq1mXLxCtD37rX-8Fj1OzUyKyNEXQoJJGRy4ygpu_diV1x9n23A7jrjax55X516J-RSrb_IGcPYgwzVUGdGmz_J-58xTNAmgVEkbWUHNN1kh7jP5ObCb08Q2gwARvS4hqR1McUBXw=s16000" data-ll-status="error" class="entered error"><noscript><img decoding="async" alt="Create a display to see the time" border="0" data-original-height="610" data-original-width="1280" src="https://blogger.googleusercontent.com/img/a/AVvXsEjK5U0LaCsPXQTqp-dBW4QM3unkqsKI5-3X4lm4dV_uEJYHG-BJhHq1mXLxCtD37rX-8Fj1OzUyKyNEXQoJJGRy4ygpu_diV1x9n23A7jrjax55X516J-RSrb_IGcPYgwzVUGdGmz_J-58xTNAmgVEkbWUHNN1kh7jP5ObCb08Q2gwARvS4hqR1McUBXw=s16000" title="Create a display to see the time"></noscript></a></div>
+<h3 style="font-size: 25px; text-align: left;"><span style="color: #2b00fe;">Step 3:</span>&nbsp;Create 3 buttons in Stopwatch using HTML CSS</h3>
+<p style="text-align: left;">Now I have created three buttons in the stopwatch. These are to <strong>start the countdown</strong>, to close the other, and to run the countdown from the beginning again.&nbsp;</p>
+<p style="text-align: left;">HTML’s button function has been used to create the buttons. I used <u>height: 45px</u>, <u>width: 120px</u> and background color blue.</p>
+<div class="class">
+<div class="class">&lt;div class=”buttons”&gt;</div>
+<div class="class">&nbsp; &lt;button id=”pauseTimer”&gt;Pause&lt;/button&gt;</div>
+<div class="class">&nbsp; &lt;button id=”startTimer”&gt;Start&lt;/button&gt;</div>
+<div class="class">&nbsp; &lt;button id=”resetTimer”&gt;Reset&lt;/button&gt;</div>
+<div class="class">&lt;/div&gt;</div>
+</div>
+<div class="class">
+<div class="class">.buttons{</div>
+<div class="class">&nbsp; &nbsp; width: 90%;</div>
+<div class="class">&nbsp; &nbsp; margin: 60px auto 0 auto;</div>
+<div class="class">&nbsp; &nbsp; display: flex;</div>
+<div class="class">&nbsp; &nbsp; justify-content: space-around;</div>
+<div class="class">}</div>
+<div class="class">.buttons button{</div>
+<div class="class">&nbsp; &nbsp; width: 120px;</div>
+<div class="class">&nbsp; &nbsp; height: 45px;</div>
+<div class="class">&nbsp; &nbsp; background-color: #205e94;</div>
+<div class="class">&nbsp; &nbsp; color: #ffffff;</div>
+<div class="class">&nbsp; &nbsp; border: none;</div>
+<div class="class">&nbsp; &nbsp; font-family: ‘Poppins’,sans-serif;</div>
+<div class="class">&nbsp; &nbsp; font-size: 18px;</div>
+<div class="class">&nbsp; &nbsp; border-radius: 5px;</div>
+<div class="class">&nbsp; &nbsp; cursor: pointer;</div>
+<div class="class">&nbsp; &nbsp; outline: none;</div>
+<div class="class">}</div>
+</div>
+<p style="text-align: left;">
+</p><p>I changed the background color of the second and third buttons using the following two lines of CSS code. <u>Nth-last-child</u> has been used to change the background color.</p>
+<div class="class">
+<div class="class">.buttons button:nth-last-child(2){</div>
+<div class="class">&nbsp; background-color: #d23332;</div>
+<div class="class">}</div>
+<div class="class">.buttons button:nth-last-child(1){</div>
+<div class="class">&nbsp; background-color: #20b380;</div>
+<div class="class">}</div>
+</div>
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEiK6IynSDvqKTiCBw9ZiufWT4V_ts4IgOaijktRgwVZNDrVev4_vx4ov6FQDNsyUy4aVGITld5DFOroZh1pOVdsV4t0bXGOx1z9NzpEmWBsT6mnQsM-ViviUgZoOzZ5Qf5lbtRcsbWUCmzA-wbYa4nc4OFjViq4vJvbMVe0Sxa75TvjSiqw4qwuHZjBng" style="display: block; padding: 1em 0px; text-align: center;" rel="noopener"><img decoding="async" alt="Create 3 buttons in Stopwatch using HTML CSS" border="0" data-original-height="610" data-original-width="1280" src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/AVvXsEiK6IynSDvqKTiCBw9ZiufWT4V_ts4IgOaijktRgwVZNDrVev4_vx4ov6FQDNsyUy4aVGITld5DFOroZh1pOVdsV4t0bXGOx1z9NzpEmWBsT6mnQsM-ViviUgZoOzZ5Qf5lbtRcsbW" title="Create 3 buttons in Stopwatch using HTML CSS" data-lazy-src="https://blogger.googleusercontent.com/img/a/AVvXsEiK6IynSDvqKTiCBw9ZiufWT4V_ts4IgOaijktRgwVZNDrVev4_vx4ov6FQDNsyUy4aVGITld5DFOroZh1pOVdsV4t0bXGOx1z9NzpEmWBsT6mnQsM-ViviUgZoOzZ5Qf5lbtRcsbWUCmzA-wbYa4nc4OFjViq4vJvbMVe0Sxa75TvjSiqw4qwuHZjBng=s16000" data-ll-status="error" class="entered error"><noscript><img decoding="async" alt="Create 3 buttons in Stopwatch using HTML CSS" border="0" data-original-height="610" data-original-width="1280" src="https://blogger.googleusercontent.com/img/a/AVvXsEiK6IynSDvqKTiCBw9ZiufWT4V_ts4IgOaijktRgwVZNDrVev4_vx4ov6FQDNsyUy4aVGITld5DFOroZh1pOVdsV4t0bXGOx1z9NzpEmWBsT6mnQsM-ViviUgZoOzZ5Qf5lbtRcsbWUCmzA-wbYa4nc4OFjViq4vJvbMVe0Sxa75TvjSiqw4qwuHZjBng=s16000" title="Create 3 buttons in Stopwatch using HTML CSS"></noscript></a></div>
+<h3 style="font-size: 25px; text-align: left;"><span style="color: #2b00fe;">Step 4:</span>&nbsp;Activate Simple Stopwatch using JavaScript</h3>
+<p style="text-align: left;">Above we just designed it. Now you need to implement this project (<strong>Simple Stopwatch using JavaScript</strong>) using JavaScript.&nbsp;</p>
+<p style="text-align: left;">First I collected some information using let. Such asset is a constant of display id and holds 0 for hours, minutes, seconds, and milliseconds.</p>
+<div class="class">
+<div class="class">let [milliseconds,seconds,minutes,hours] = [0,0,0,0];</div>
+<div class="class">let timerRef = document.querySelector(‘.timerDisplay’);</div>
+<div class="class">let int = null;</div>
+</div>
+<p style="text-align: left;">
+I have executed the start button using JavaScript below. The countdown will begin when you click this button.</p>
+<div class="class">
+<div class="class">document.getElementById(‘startTimer’).addEventListener(‘click’, ()=&gt;{</div>
+<div class="class">&nbsp; &nbsp; if(int!==null){</div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; clearInterval(int);</div>
+<div class="class">&nbsp; &nbsp; }</div>
+<div class="class">&nbsp; &nbsp; int = setInterval(displayTimer,10);</div>
+<div class="class">});</div>
+</div>
+<p style="text-align: left;">
+I have implemented the pause button using the code below. As a result, when you click this button, the countdown will stop during the stopwatch.</p>
+<div class="class">
+<div class="class">document.getElementById(‘pauseTimer’).addEventListener(‘click’, ()=&gt;{</div>
+<div class="class">&nbsp; &nbsp; clearInterval(int);</div>
+<div class="class">});</div>
+</div>
+<p style="text-align: left;">
+The following codes have helped to make the reset button work. Hours, minutes, seconds, and milliseconds will be 0 when you click the reset button.</p>
+<div class="class">
+<div class="class">document.getElementById(‘resetTimer’).addEventListener(‘click’, ()=&gt;{</div>
+<div class="class">&nbsp; &nbsp; clearInterval(int);</div>
+<div class="class">&nbsp; &nbsp; [milliseconds,seconds,minutes,hours] = [0,0,0,0];</div>
+<div class="class">&nbsp; &nbsp; timerRef.innerHTML = ’00 : 00 : 00 : 000 ‘;</div>
+<div class="class">});</div>
+</div>
+<p style="text-align: left;">
+&nbsp;Below I have implemented this time stopwatch using the function <u>displayTimer</u>. Below I have tried to give some explanations so that you can understand.</p>
+<div style="text-align: left;">
+<p style="text-align: left;">&nbsp; &nbsp; &nbsp; &nbsp;➤ You will see that here I have used three ‘if’ functions. I have added the condition in the first ‘if’ function that when the milliseconds are equal to thousands, the <span style="background-color: white; color: #800180;">value of milliseconds will be zero and will increase by one in seconds</span>.</p>
+<p style="text-align: left;">&nbsp; &nbsp; &nbsp; &nbsp;➤ We know that one second is equal to 1000 milliseconds. So when the value of milliseconds reaches thousands after the countdown, the <span style="background-color: white; color: #800180;">value of milliseconds will be zero and the value of seconds will increase by 1</span>.</p>
+<p style="text-align: left;">&nbsp; &nbsp; &nbsp; &nbsp;➤ Similarly, I have used the second ‘if’ function for the time in seconds. We know one minute is equal to 60 seconds. So when the value of the second is equal to 60, the <span style="background-color: white; color: #800180;">time of the second will be zero and the minute cell will increase by one</span>.</p>
+<p style="text-align: left;">&nbsp; &nbsp; &nbsp; &nbsp;➤ We know that one hour is equal to 60 minutes. So when the time in minutes reaches 60, we see 0 in the minute cell and one increase in the hour cell.</p>
+<p style="text-align: left;">&nbsp;This is how the countdown timer will continue. If you know basic JavaScript you will definitely understand it. If you have difficulty understanding, please let me know in the comments.</p>
+<div class="class">
+<div class="class" style="text-align: left;">function displayTimer(){</div>
+<div class="class">&nbsp; &nbsp; milliseconds+=10;</div>
+<div class="class"></div>
+<div class="class">&nbsp; &nbsp; if(milliseconds == 1000){</div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; milliseconds = 0;</div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; seconds++;</div>
+<div class="class"></div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; if(seconds == 60){</div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; seconds = 0;</div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; minutes++;</div>
+<div class="class"></div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(minutes == 60){</div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; minutes = 0;</div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; hours++;</div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; }</div>
+<div class="class">&nbsp; &nbsp; }</div>
+</div>
+<p>I added a zero before each one-digit period. A number is seen when the time is less than 10. I have used the following four-line codes to add one zero to each of these one-digit numbers. When the value of hours, minutes, seconds, and milliseconds is less than 10, one zero is added before those times.</p>
+<blockquote><p>Here in the millisecond cell, I added a little extra code. Because milliseconds are four numbers, two conditions have to be added here. When the value of milliseconds is less than 10, two 0s will be added. When its value is less than 100, a 0 will be added.</p></blockquote>
+<div class="class">
+<div class="class">&nbsp;let h = hours &lt; 10 ? “0” + hours : hours;</div>
+<div class="class">&nbsp;let m = minutes &lt; 10 ? “0” + minutes : minutes;</div>
+<div class="class">&nbsp;let s = seconds &lt; 10 ? “0” + seconds : seconds;</div>
+<div class="class">&nbsp;let ms = milliseconds &lt; 10 ? “00” + milliseconds : milliseconds &lt; 100 ? “0” + milliseconds : milliseconds;</div>
+<div></div>
+</div>
+<p style="text-align: left;">We have arranged to display all this information in the display using <u>innerHTML</u>. As you can see above, we have stored the hours, minutes, seconds, and milliseconds between h, m, s, and ms, respectively. Below is an image that will help you learn more about this code.</p>
+</div>
+<div>
+<div class="class">timerRef.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`;</div>
+<p><a href="https://blogger.googleusercontent.com/img/a/AVvXsEhbovVjvnIJUQrPflxeKhKO8WSnygc-HoVb9ePH7Dia1lEpyXmBPcEiLfE82MJPe-Ykrms7vcQ1FnLAVXyKi-Pmo8c_qD4ztQm-syMGb23tGmN9RuCSkd6qCaJZl2e2kSYUbEXmIDnggN895GsQTODwaUkMd4-dvlAS5yZSMwcGO3ccjwnC3QovVMBNqg=s1000" style="margin-left: 1em; margin-right: 1em; text-align: center;" rel="noopener"><img decoding="async" alt="Activate Simple Stopwatch using JavaScript" border="0" data-original-height="330" data-original-width="1000" src="https://blogger.googleusercontent.com/img/a/AVvXsEhbovVjvnIJUQrPflxeKhKO8WSnygc-HoVb9ePH7Dia1lEpyXmBPcEiLfE82MJPe-Ykrms7vcQ1FnLAVXyKi-Pmo8c_qD4ztQm-syMGb23tGmN9RuCSkd6qCaJZl2e2kSYUbEXmIDnggN895GsQTODwaUkMd4-dvlAS5yZSMwcGO3ccjwnC3QovVMBNqg=s16000" title="Activate Simple Stopwatch using JavaScript" data-lazy-src="https://blogger.googleusercontent.com/img/a/AVvXsEhbovVjvnIJUQrPflxeKhKO8WSnygc-HoVb9ePH7Dia1lEpyXmBPcEiLfE82MJPe-Ykrms7vcQ1FnLAVXyKi-Pmo8c_qD4ztQm-syMGb23tGmN9RuCSkd6qCaJZl2e2kSYUbEXmIDnggN895GsQTODwaUkMd4-dvlAS5yZSMwcGO3ccjwnC3QovVMBNqg=s16000" data-ll-status="error" class="entered error"><noscript><img decoding="async" alt="Activate Simple Stopwatch using JavaScript" border="0" data-original-height="330" data-original-width="1000" src="https://blogger.googleusercontent.com/img/a/AVvXsEhbovVjvnIJUQrPflxeKhKO8WSnygc-HoVb9ePH7Dia1lEpyXmBPcEiLfE82MJPe-Ykrms7vcQ1FnLAVXyKi-Pmo8c_qD4ztQm-syMGb23tGmN9RuCSkd6qCaJZl2e2kSYUbEXmIDnggN895GsQTODwaUkMd4-dvlAS5yZSMwcGO3ccjwnC3QovVMBNqg=s16000" title="Activate Simple Stopwatch using JavaScript"></noscript></a></p>
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgG1Akc4A70lawkz47C1GXz7GyQWhQRFCgkAABcuJp2db7po3gsTrq23SLL5Z9V8vWfWtUe3osHmV37SOeziKmvl5ToeVdih_H6zROYKHp3R_6yo3hfSh2Ccj4MQo9dG4Kame-WQnZFTdxxTNh6DgsUyfOsjZcB_L-OjoXq-TnyAiTxjKOiyH60upAneQ" style="display: block; padding: 1em 0px; text-align: center;" rel="noopener"><img decoding="async" alt="Simple Stopwatch using JavaScript" border="0" data-original-height="610" data-original-width="1280" src="https://blogger.googleusercontent.com/img/a/AVvXsEgG1Akc4A70lawkz47C1GXz7GyQWhQRFCgkAABcuJp2db7po3gsTrq23SLL5Z9V8vWfWtUe3osHmV37SOeziKmvl5ToeVdih_H6zROYKHp3R_6yo3hfSh2Ccj4MQo9dG4Kame-WQnZFTdxxTNh6DgsUyfOsjZcB_L-OjoXq-TnyAiTxjKOiyH60upAneQ=s16000" title="Simple Stopwatch using JavaScript" data-lazy-src="https://blogger.googleusercontent.com/img/a/AVvXsEgG1Akc4A70lawkz47C1GXz7GyQWhQRFCgkAABcuJp2db7po3gsTrq23SLL5Z9V8vWfWtUe3osHmV37SOeziKmvl5ToeVdih_H6zROYKHp3R_6yo3hfSh2Ccj4MQo9dG4Kame-WQnZFTdxxTNh6DgsUyfOsjZcB_L-OjoXq-TnyAiTxjKOiyH60upAneQ=s16000" data-ll-status="error" class="entered error"><noscript><img decoding="async" alt="Simple Stopwatch using JavaScript" border="0" data-original-height="610" data-original-width="1280" src="https://blogger.googleusercontent.com/img/a/AVvXsEgG1Akc4A70lawkz47C1GXz7GyQWhQRFCgkAABcuJp2db7po3gsTrq23SLL5Z9V8vWfWtUe3osHmV37SOeziKmvl5ToeVdih_H6zROYKHp3R_6yo3hfSh2Ccj4MQo9dG4Kame-WQnZFTdxxTNh6DgsUyfOsjZcB_L-OjoXq-TnyAiTxjKOiyH60upAneQ=s16000" title="Simple Stopwatch using JavaScript"></noscript></a></div>
+<p style="text-align: left;">
+Now this <a href="https://www.foolishdeveloper.com/2021/09/create-countdown-timer-with-javascript.html" rel="noopener">countdown stopwatch</a> is absolutely ready to work. You can use this <strong>simple JavaScript stopwatch</strong> for any task.</p>
+<p style="text-align: left;"><span style="font-size: 23px;">Final Javascript code</span></p>
+<p style="text-align: left;">For your understanding, I have put together the <a href="https://www.foolishdeveloper.com/search/label/javascript" rel="noopener">complete JavaScript code</a> below. As a result, you can better analyze.</p>
+</div>
+<div style="text-align: left;">
+<div class="class">
+<div class="class">let [milliseconds,seconds,minutes,hours] = [0,0,0,0];</div>
+<div class="class">let timerRef = document.querySelector(‘.timerDisplay’);</div>
+<div class="class">let int = null;</div>
+<div class="class"></div>
+<div class="class">document.getElementById(‘startTimer’).addEventListener(‘click’, ()=&gt;{</div>
+<div class="class">&nbsp; &nbsp; if(int!==null){</div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; clearInterval(int);</div>
+<div class="class">&nbsp; &nbsp; }</div>
+<div class="class">&nbsp; &nbsp; int = setInterval(displayTimer,10);</div>
+<div class="class">});</div>
+<div class="class"></div>
+<div class="class">document.getElementById(‘pauseTimer’).addEventListener(‘click’, ()=&gt;{</div>
+<div class="class">&nbsp; &nbsp; clearInterval(int);</div>
+<div class="class">});</div>
+<div class="class"></div>
+<div class="class">document.getElementById(‘resetTimer’).addEventListener(‘click’, ()=&gt;{</div>
+<div class="class">&nbsp; &nbsp; clearInterval(int);</div>
+<div class="class">&nbsp; &nbsp; [milliseconds,seconds,minutes,hours] = [0,0,0,0];</div>
+<div class="class">&nbsp; &nbsp; timerRef.innerHTML = ’00 : 00 : 00 : 000 ‘;</div>
+<div class="class">});</div>
+<div class="class"></div>
+<div class="class">function displayTimer(){</div>
+<div class="class">&nbsp; &nbsp; milliseconds+=10;</div>
+<div class="class">&nbsp; &nbsp; if(milliseconds == 1000){</div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; milliseconds = 0;</div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; seconds++;</div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; if(seconds == 60){</div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; seconds = 0;</div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; minutes++;</div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(minutes == 60){</div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; minutes = 0;</div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; hours++;</div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</div>
+<div class="class">&nbsp; &nbsp; &nbsp; &nbsp; }</div>
+<div class="class">&nbsp; &nbsp; }</div>
+<div class="class"></div>
+<div class="class">&nbsp;let h = hours &lt; 10 ? “0” + hours : hours;</div>
+<div class="class">&nbsp;let m = minutes &lt; 10 ? “0” + minutes : minutes;</div>
+<div class="class">&nbsp;let s = seconds &lt; 10 ? “0” + seconds : seconds;</div>
+<div class="class">&nbsp;let ms = milliseconds &lt; 10 ? “00” + milliseconds : milliseconds &lt; 100 ? “0” + milliseconds : milliseconds;</div>
+<div class="class"></div>
+<div class="class">&nbsp;timerRef.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`;</div>
+<div class="class">}</div>
+</div>
+</div>
+<div class="separator" style="clear: both; text-align: center;">&nbsp;</div>
+<p style="text-align: left;">I hope from this tutorial, you have learned how to make a simple <b>JavaScript Stopwatch</b>. I have already shared with you how to make different types of <a href="https://www.foolishdeveloper.com/2021/07/simple-analog-clock-html-css-javascript.html" rel="noopener"><span style="color: #2b00fe;">analog clocks</span></a> and <a href="https://www.foolishdeveloper.com/2021/09/create-countdown-timer-with-javascript.html" rel="noopener"><span style="color: #2b00fe;">countdown timers</span></a>.&nbsp;</p>
+<p style="text-align: left;">If you want to know more about JavaScript, you can watch those tutorials. If there is any problem, you can ask questions directly on Instagram (<a href="https://www.instagram.com/foolishdeveloper/" rel="noopener"><span style="color: #2b00fe;">@foolishdeveloper</span></a>).</p>
+<p><script><br />
+function generate(){var e,n=document.getElementById("downloadx"),t=document.getElementById("btnx"),a=document.getElementById("downloadx").href,l=25,d=document.createElement("span");n.parentNode.replaceChild(d,n),e=setInterval(function(){--l<0?(d.parentNode.replaceChild(n,d),clearInterval(e),window.location.replace(a),n.style.display="inline"):(d.innerHTML="
+
+
+
+
+
+<p style='text-align: center'>Download will start after "+l.toString()+" Seconds</p>
+<p>",t.style.display="none")},1e3)}<br />
+</script></p>
+<p><button class="last-btn" id="btnx" onclick="generate()" style="display: none;"><i class="fa fa-download"></i> Download Code</button></p>
+<p><span><p style="text-align: center">Download will start after 20 Seconds</p></span></p>
+<style>
+  p{font-size:18.5px;<br />
+    color: #292828;<br />
+  font-family: sans-serif;</p>
+<p>    display: block;<br />
+    margin-block-start: 1em;<br />
+    margin-block-end: 1em;<br />
+    margin-inline-start: 0px;<br />
+    margin-inline-end: 0px;<br />
+    word-wrap: break-word;</p>
+<p>  line-height: 2em;}</p>
+<p>  h3{text-align: left;<br />
+    font-family: Open Sans,Arial,sans-serif;<br />
+    line-height: 1.7em;<br />
+    color:black;<br />
+    color:#333131;<br />
+    font-weight: 520;</p>
+<p>    -webkit-font-smoothing: antialiased;<br />
+    }</p>
+<p>   h2{text-align: left;<br />
+    font-family: Open Sans,Arial,sans-serif;<br />
+    line-height: 1.7em;<br />
+    color:black;</p>
+<p>    font-weight: 620;<br />
+    -webkit-font-smoothing: antialiased;<br />
+    }</p>
+<p>.class {<br />
+ background:#edf0f2;<br />
+ font-family: Consolas,Monaco,Lucida Console,monospace;<br />
+ line-height: 1.65;<br />
+ word-wrap: break-word;<br />
+ border-radius: 5px;<br />
+ color:#001d8f;<br />
+ font-size:17.1px;<br />
+ padding-left:10px;<br />
+ white-space: pre-wrap;}</p>
+<p>    button.last-btn{<br />
+  padding:14px 29px;<br />
+    font-size:17px;<br />
+    background-color:#0e87f0;<br />
+    border-radius:6px;<br />
+    color:white;<br />
+      font-family: Open Sans,Arial,sans-serif;<br />
+      border:none;<br />
+    margin-left:35%;</p>
+<p>  }</p>
+<p> @media only screen and (max-width: 400px) {<br />
+  button.last-btn{<br />
+  margin-left:0px;<br />
+  margin-right:0px;<br />
+  }<br />
+}<br />
+    @media only screen and (max-width: 300px) {<br />
+    button.last-btn{<br />
+  margin-left:0px;<br />
+  margin-right:0px;<br />
+  }<br />
+}<br />
+    @media only screen and (max-width: 600px) {<br />
+    button.last-btn{<br />
+  margin-left:0px;<br />
+  margin-right:0px;<br />
+  }<br />
+}<br />
+    @media only screen and (max-width: 800px) {<br />
+    button.last-btn{<br />
+  margin-left:0px;<br />
+  margin-right:0px;<br />
+  }<br />
+}</p>
+<p>      @media only screen and (max-width: 400px) {<br />
+  .copyButton {<br />
+     width: 45%;<br />
+  }</p>
+</style>
+		</div>
+
+			</div>
+</article>
+
+			<div class="comments-area">
+				<div id="comments">
+
+	<h3 class="comments-title">2 thoughts on “Create a Simple Stopwatch using JavaScript (Tutorial + Code)”</h3>
+		<ol class="comment-list">
+			
+		<li id="comment-185" class="comment even thread-even depth-1 parent">
+			<article class="comment-body" id="div-comment-185" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta" aria-label="Comment meta">
+					<img alt="" src="https://secure.gravatar.com/avatar/d696ee8ce331c354fbb6fa792f7e8810?s=50&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/d696ee8ce331c354fbb6fa792f7e8810?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo entered lazyloaded" height="50" width="50" decoding="async" data-lazy-src="https://secure.gravatar.com/avatar/d696ee8ce331c354fbb6fa792f7e8810?s=50&amp;d=mm&amp;r=g" data-ll-status="loaded" srcset="https://secure.gravatar.com/avatar/d696ee8ce331c354fbb6fa792f7e8810?s=100&amp;d=mm&amp;r=g 2x"><noscript><img alt='' src='https://secure.gravatar.com/avatar/d696ee8ce331c354fbb6fa792f7e8810?s=50&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/d696ee8ce331c354fbb6fa792f7e8810?s=100&#038;d=mm&#038;r=g 2x' class='avatar avatar-50 photo' height='50' width='50' decoding='async'/></noscript>					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Maique Gouveia</cite>						</div>
+
+													<div class="entry-meta comment-metadata">
+								<a href="https://foolishdeveloper.com/create-a-simple-stopwatch-using-javascript-tutorial-code/#comment-185">
+									<time datetime="2023-01-22T21:43:31+00:00" itemprop="datePublished">
+										January 22, 2023 at 9:43 pm									</time>
+								</a>
+															</div>
+												</div>
+
+									</footer>
+
+				<div class="comment-content" itemprop="text">
+					<p>This was very useful. Thanks!</p>
+<span class="reply"><a rel="nofollow" class="comment-reply-link" href="https://foolishdeveloper.com/create-a-simple-stopwatch-using-javascript-tutorial-code/#comment-185" data-commentid="185" data-postid="208" data-belowelement="div-comment-185" data-respondelement="respond" data-replyto="Reply to Maique Gouveia" aria-label="Reply to Maique Gouveia">Reply</a></span>				</div>
+			</article>
+			<ul class="children">
+
+		<li id="comment-186" class="comment byuser comment-author-groundtutorialwebgmail-com odd alt depth-2">
+			<article class="comment-body" id="div-comment-186" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta" aria-label="Comment meta">
+					<img alt="" src="https://secure.gravatar.com/avatar/34ef4d3114cee01e7ececaea72715cf7?s=50&amp;d=mm&amp;r=g" data-lazy-srcset="https://secure.gravatar.com/avatar/34ef4d3114cee01e7ececaea72715cf7?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo entered lazyloaded" height="50" width="50" decoding="async" data-lazy-src="https://secure.gravatar.com/avatar/34ef4d3114cee01e7ececaea72715cf7?s=50&amp;d=mm&amp;r=g" data-ll-status="loaded" srcset="https://secure.gravatar.com/avatar/34ef4d3114cee01e7ececaea72715cf7?s=100&amp;d=mm&amp;r=g 2x"><noscript><img alt='' src='https://secure.gravatar.com/avatar/34ef4d3114cee01e7ececaea72715cf7?s=50&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/34ef4d3114cee01e7ececaea72715cf7?s=100&#038;d=mm&#038;r=g 2x' class='avatar avatar-50 photo' height='50' width='50' decoding='async'/></noscript>					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn"><a href="https://foolishdeveloper.com/" rel="external nofollow ugc" class="url">groundtutorialweb@gmail.com</a></cite>						</div>
+
+													<div class="entry-meta comment-metadata">
+								<a href="https://foolishdeveloper.com/create-a-simple-stopwatch-using-javascript-tutorial-code/#comment-186">
+									<time datetime="2023-01-22T23:17:24+00:00" itemprop="datePublished">
+										January 22, 2023 at 11:17 pm									</time>
+								</a>
+															</div>
+												</div>
+
+									</footer>
+
+				<div class="comment-content" itemprop="text">
+					<p>Welcome</p>
+<span class="reply"><a rel="nofollow" class="comment-reply-link" href="https://foolishdeveloper.com/create-a-simple-stopwatch-using-javascript-tutorial-code/#comment-186" data-commentid="186" data-postid="208" data-belowelement="div-comment-186" data-respondelement="respond" data-replyto="Reply to groundtutorialweb@gmail.com" aria-label="Reply to groundtutorialweb@gmail.com">Reply</a></span>				</div>
+			</article>
+			</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+			<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://foolishdeveloper.com/create-a-simple-stopwatch-using-javascript-tutorial-code/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://foolishdeveloper.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate=""><p class="comment-form-comment"><label for="comment" class="screen-reader-text">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" required=""></textarea></p><label for="author" class="screen-reader-text">Name</label><input placeholder="Name *" id="author" name="author" type="text" value="" size="30" required="">
+<label for="email" class="screen-reader-text">Email</label><input placeholder="Email *" id="email" name="email" type="email" value="" size="30" required="">
+<label for="url" class="screen-reader-text">Website</label><input placeholder="Website" id="url" name="url" type="url" value="" size="30">
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<div class="sgr-main"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/anchor.html" width="304" height="78" role="presentation" name="a-gf6ia0b7qflq" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;" src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/saved_resource.html"></iframe></div><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="208" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p></form>	</div><!-- #respond -->
+	
+</div><!-- #comments -->
+			</div>
+
+					</main>
+	</div>
+
+	<div class="widget-area sidebar is-left-sidebar" id="left-sidebar">
+	<div class="inside-left-sidebar">
+		<aside id="nav_menu-3" class="widget inner-padding widget_nav_menu"><div class="menu-left-sidebar-container"><ul id="menu-left-sidebar" class="menu"><li id="menu-item-379" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-379"><a href="https://foolishdeveloper.com/category/image_slider/">1. Image Slider</a></li>
+<li id="menu-item-380" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-380"><a href="https://foolishdeveloper.com/category/calculator/">2. JS Calculator</a></li>
+<li id="menu-item-381" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-381"><a href="https://foolishdeveloper.com/">3. Alarm Clock</a></li>
+<li id="menu-item-1371" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1371"><a href="https://foolishdeveloper.com/category/popup/">4. PopUp Window</a></li>
+<li id="menu-item-1372" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1372"><a href="https://foolishdeveloper.com/category/login_form/">5. Login Form</a></li>
+<li id="menu-item-1373" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1373"><a href="https://foolishdeveloper.com/category/sidebar_menu/">6. Sidebar Menu</a></li>
+<li id="menu-item-1374" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1374"><a href="https://foolishdeveloper.com/category/menu_bar/">7. Navigation Menu</a></li>
+<li id="menu-item-1375" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1375"><a href="https://foolishdeveloper.com/category/animation/">8. CSS Animation</a></li>
+<li id="menu-item-1376" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1376"><a href="https://foolishdeveloper.com/category/image-zoom/">9. Image Zoom Effect</a></li>
+<li id="menu-item-1377" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1377"><a href="https://foolishdeveloper.com/category/registration_form/">10. Registration Menu</a></li>
+<li id="menu-item-1378" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1378"><a href="https://foolishdeveloper.com/category/analog_clock/">11. Js Analog Clock</a></li>
+<li id="menu-item-1379" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1379"><a href="https://foolishdeveloper.com/category/digital_clock/">12. JS Digital Clock</a></li>
+<li id="menu-item-1380" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1380"><a href="https://foolishdeveloper.com/category/social_icon/">13. Social Media Icon</a></li>
+<li id="menu-item-1381" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1381"><a href="https://foolishdeveloper.com/category/button/">14. Button Effect</a></li>
+<li id="menu-item-1382" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1382"><a href="https://foolishdeveloper.com/category/text_typing/">15. Text Typing</a></li>
+<li id="menu-item-1383" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1383"><a href="https://foolishdeveloper.com/category/video_player/">16. Video Player</a></li>
+<li id="menu-item-1384" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1384"><a href="https://foolishdeveloper.com/category/color_generator/">17. Color Generator</a></li>
+<li id="menu-item-1385" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1385"><a href="https://foolishdeveloper.com/category/card-design/">18. Profile Card</a></li>
+<li id="menu-item-1387" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1387"><a href="https://foolishdeveloper.com/category/range_slider/">19. Custom Range Slider</a></li>
+<li id="menu-item-1388" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1388"><a href="https://foolishdeveloper.com/category/javascript_app/">20. Weather App</a></li>
+<li id="menu-item-1389" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1389"><a href="https://foolishdeveloper.com/category/stopwatch/">21. JS Stopwatch</a></li>
+<li id="menu-item-1391" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1391"><a href="https://foolishdeveloper.com/category/website/">22. Website Tutorial</a></li>
+</ul></div></aside>	</div>
+</div>
+<div class="widget-area sidebar is-right-sidebar" id="right-sidebar">
+	<div class="inside-right-sidebar">
+			</div>
+</div>
+
+	</div>
+</div>
+
+
+<div class="site-footer footer-bar-active footer-bar-align-right">
+			<footer class="site-info" aria-label="Site" itemtype="https://schema.org/WPFooter" itemscope="">
+			<div class="inside-site-info grid-container">
+						<div class="footer-bar">
+			<aside id="nav_menu-5" class="widget inner-padding widget_nav_menu"><div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-1510" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1510"><a href="https://foolishdeveloper.com/contact-me/">Contact Me</a></li>
+<li id="menu-item-1511" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1511"><a href="https://foolishdeveloper.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-1512" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1512"><a href="https://foolishdeveloper.com/disclaimer/">Disclaimer</a></li>
+<li id="menu-item-1513" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1513"><a href="https://foolishdeveloper.com/terms-and-conditions/">Terms and Conditions</a></li>
+</ul></div></aside>		</div>
+						<div class="copyright-bar">
+					© 2022 <a href="https://foolishdeveloper.com/">Foolish Developer</a> | Design By <a href="https://www.instagram.com/foolishdeveloper/">Shantanu Jana</a>				</div>
+			</div>
+		</footer>
+		</div>
+
+<script>
+function generate(){var e,n=document.getElementById("downloadx"),t=document.getElementById("btnx"),a=document.getElementById("downloadx").href,l=25,d=document.createElement("span");n.parentNode.replaceChild(d,n),e=setInterval(function(){--l<0?(d.parentNode.replaceChild(n,d),clearInterval(e),window.location.replace(a),n.style.display="inline"):(d.innerHTML="<p style='text-align: center'>Download will start after "+l.toString()+" Seconds</p>",t.style.display="none")},1e3)}
+	
+	Array.from(document.querySelectorAll('a[target="_blank"]'))
+  .forEach(link => link.removeAttribute('target'));
+</script> 
+<script id="generate-a11y">!function(){"use strict";if("querySelector"in document&&"addEventListener"in window){var e=document.body;e.addEventListener("mousedown",function(){e.classList.add("using-mouse")}),e.addEventListener("keydown",function(){e.classList.remove("using-mouse")})}}();</script><!--[if lte IE 11]>
+<script src='https://foolishdeveloper.com/wp-content/themes/generatepress-1/assets/js/classList.min.js?ver=3.1.3' id='generate-classlist-js'></script>
+<![endif]-->
+<script id="generate-menu-js-extra">
+var generatepressMenu = {"toggleOpenedSubMenus":"1","openSubMenuLabel":"Open Sub-Menu","closeSubMenuLabel":"Close Sub-Menu"};
+</script>
+<script src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/menu.min.js.download" id="generate-menu-js" defer=""></script>
+<script src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/comment-reply.min.js.download" id="comment-reply-js" defer=""></script>
+<script src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/api.js.download" id="sgr_recaptcha-js" defer=""></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async="" src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/lazyload.min.js.download"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script>
+<script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script>
+
+
+<span id="elementor-device-mode" class="elementor-screen-only"></span><div id="save-code-popup-parent"></div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge expires in two minutes" src="./Create a Simple Stopwatch using JavaScript (Tutorial + Code) - foolishdeveloper.com_files/bframe.html" name="c-gf6ia0b7qflq" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;"></iframe></div></div></body></html>
